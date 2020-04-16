@@ -5,9 +5,8 @@ import com.github.pagehelper.PageInfo;
 import com.toolman.toolmantalk.entity.DiscussPost;
 import com.toolman.toolmantalk.service.DiscussPostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class DiscussPostController {
 
     @GetMapping("/discussposts")
     public PageInfo<DiscussPost> list(@RequestParam(value = "start", defaultValue = "1") int start,
-                                      @RequestParam(value = "size", defaultValue = "5") int size){
+                                      @RequestParam(value = "size", defaultValue = "6") int size){
         PageHelper.startPage(start, size, "id desc");
         List<DiscussPost> posts = discussPostService.listDiscussPosts();
 
@@ -28,5 +27,12 @@ public class DiscussPostController {
         return page;
     }
 
+/*测试用可删除*/
+    /*页面跳转 部分*/
+    @RequestMapping(value="/listPost", method= RequestMethod.GET)
+    public ModelAndView listPost(){
+        ModelAndView mv = new ModelAndView("listPost");
+        return mv;
+    }
 
 }
