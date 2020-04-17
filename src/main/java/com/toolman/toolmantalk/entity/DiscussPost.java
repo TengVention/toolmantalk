@@ -9,6 +9,8 @@ public class DiscussPost {
     private int id;
     //用户id
     private int userId;
+
+    private User user;
     //标题
     private String title;
     //文本内容
@@ -94,6 +96,14 @@ public class DiscussPost {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

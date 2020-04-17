@@ -68,13 +68,13 @@
         </tr>
 
         <tr>
-            <td>用户id</td>
+            <td>用户名</td>
             <td>帖子标题</td>
             <td>帖子内容</td>
         </tr>
 
         <tr v-for="post in posts ">
-            <td>{{post.userId}}</td>
+            <td>{{post.user.username}}</td>
             <td>{{post.title}}</td>
             <td>{{post.content}}</td>
         </tr>
