@@ -3,6 +3,8 @@ package com.toolman.toolmantalk.entity;
 import java.util.Date;
 /**
  *  帖子实体类
+ *  类型type： 0-普通  1-置顶
+ *  状态status：0-正常 1-精华 2-拉黑
  */
 public class DiscussPost {
 

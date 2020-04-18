@@ -10,6 +10,8 @@ public interface UserMapper {
     User selectById(int id);
     //通过用户名查找用户
     User selectByName(String username);
+    //通过手机号查找用户
+    User selectByPhone(String phone);
     //通过邮箱查找用户
     User selectByEmail(String email);
     //新增用户

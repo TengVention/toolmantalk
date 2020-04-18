@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/axios.min.js"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:400px;
+            padding:20px;
+
+        }
+
+        div#pagination{
+            text-align: center;
+            line-height: 100px;
+        }
+        div#pagination a{
+            text-decoration:none;
+        }
+
+        .disableHref{
+            cursor:default;
+            color:#E5E0E0;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <script>
+        $(function () {
+            var data4Vue = {
+                uri: 'register',
+                result: [],
+                user: {username:'',password:'',repeatpassword:'',email:''}
+            };
+            //ViewModel
+            var vue = new Vue({
+                el: '#workingArea',
+                data: data4Vue,
+                mounted: function () {
+
+                },
+                methods: {
+                    register: function () {
+                        var url = this.uri;
+                        if(0==this.user.username.length){
+                            $("span.errorMessage").html("请输入用户名");
+                            return;
+                        }
+                        if(0==this.user.email.length){
+                            $("span.errorMessage").html("请输入邮箱");
+                            return;
+                        }
+                        if(0==this.user.password.length){
+                            $("span.errorMessage").html("请输入密码");
+                            return;
+                        }
+                        if(0==this.user.repeatpassword.length){
+                            $("span.errorMessage").html("请输入重复密码");
+                            return;
+                        }
+                        if(this.user.password !=this.user.repeatpassword){
+                            $("span.errorMessage").html("重复密码不一致");
+                            return;
+                        }
+
+                        axios.post(url,this.user).then(function (response) {
+                            var result = response.data;
+                            var userId = result.data.userId;
+                            if (result.code == 0) {
+                                location.href = "activation/"+ userId;
+                            }
+                            else {
+                                $("span.errorMessage").html(result.message);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+    <div id="workingArea">
+
+        <table class="registerTable" align="center">
+            <tr>
+                <td  class="registerTip registerTableLeftTD">设置会员名</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="registerTableLeftTD">登陆名</td>
+                <td  class="registerTableRightTD"><input v-model="user.username" placeholder="会员名一旦设置成功，无法修改" > </td>
+            </tr>
+            <tr>
+                <td  class="registerTip registerTableLeftTD">设置登陆密码</td>
+                <td  class="registerTableRightTD">登陆时验证，保护账号信息</td>
+            </tr>
+
+            <tr>
+                <td class="registerTableLeftTD">邮箱</td>
+                <td class="registerTableRightTD"><input v-model="user.email"  type="email"  placeholder="请输入你的邮箱" > </td>
+            </tr>
+
+            <tr>
+                <td class="registerTableLeftTD">登陆密码</td>
+                <td class="registerTableRightTD"><input v-model="user.password"  type="password"  placeholder="设置你的登陆密码" > </td>
+            </tr>
+            <tr>
+                <td class="registerTableLeftTD">密码确认</td>
+                <td class="registerTableRightTD"><input v-model="user.repeatpassword"   type="password"  placeholder="请再次输入你的密码" > </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="registerButtonTD">
+                    <a @click="register"><button>提   交</button></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>提示</td>
+                <td>
+                    <span class="errorMessage"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

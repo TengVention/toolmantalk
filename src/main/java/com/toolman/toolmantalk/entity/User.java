@@ -13,6 +13,8 @@ public class User {
     private String password;
     //密码加盐值
     private String salt;
+    //手机号
+    private String phone;
     //邮箱
     private String email;
     //类型
@@ -56,6 +58,14 @@ public class User {
 
     public void setSalt(String salt) {
         this.salt = salt;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -113,6 +123,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", salt='" + salt + '\'' +
+                ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", type=" + type +
                 ", status=" + status +

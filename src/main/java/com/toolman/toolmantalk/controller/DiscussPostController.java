@@ -23,7 +23,7 @@ public class DiscussPostController {
     @GetMapping("/discussposts")
     @CrossOrigin
     public PageInfo<DiscussPost> list(@RequestParam(value = "start", defaultValue = "1") int start,
-                                      @RequestParam(value = "size", defaultValue = "6") int size){
+                                      @RequestParam(value = "size", defaultValue = "7") int size){
         PageHelper.startPage(start, size);
         List<DiscussPost> posts = discussPostService.listDiscussPosts();
 
