@@ -44,7 +44,8 @@
             var data4Vue = {
                 uri: 'register',
                 result: [],
-                user: {username:'',password:'',repeatpassword:'',email:''}
+                verifycode: '',
+                user: {username:'',password:'',repeatpassword:'',email:'',phone:''}
             };
             //ViewModel
             var vue = new Vue({
@@ -79,12 +80,36 @@
 
                         axios.post(url,this.user).then(function (response) {
                             var result = response.data;
-                            var userId = result.data.userId;
                             if (result.code == 0) {
-                                location.href = "activation/"+ userId;
+                                $("table.registerTable").hide();
+                                $("table.activatedTable").css("visibility","visible");
                             }
                             else {
                                 $("span.errorMessage").html(result.message);
+                            }
+                        });
+                    },
+                    sendCode: function () {
+                        var url = "sms";
+                        axios.post(url,this.user).then(function (response) {
+                            var result = response.data;
+                            if (result.code == 0) {
+                                $("button.getCode").text(result.data);
+                            }else {
+                                $("span.smsMessage").html(result.message);
+                            }
+                        });
+                    },
+                    checkCode: function () {
+                        var code = vue.verifycode;
+                        var url = "sms/checkCode?code="+code+"&phone="+vue.user.phone;
+                        axios.post(url).then(function (response) { 
+                            var result = response.data;
+                            if (result.code==0){
+                                $("table.activatedTable").css("visibility","hidden");
+                                $("span.success").html(result.data);
+                            }else {
+                                $("span.fail").html(result.data);
                             }
                         });
                     }
@@ -135,6 +160,31 @@
                 </td>
             </tr>
         </table>
+        <table style="visibility:hidden" class="activatedTable" align="center">
+            <tr>
+                <td colspan="2">注册成功!赶快激活账号吧</td>
+            </tr>
+            <tr>
+                <td colspan="2">手机号</td>
+            </tr>
+            <tr>
+                <td><input v-model="user.phone" type="text"></td>
+                <td><button @click="sendCode" class="getCode">获取验证码</button></td>
+            </tr>
+            <tr>
+                <td><input v-model="verifycode" type="text"></td>
+                <td><button @click="checkCode">激活账号</button></td>
+            </tr>
+
+            <tr>
+                <td>提示</td>
+                <td>
+                    <span class="smsMessage"></span>
+                </td>
+            </tr>
+        </table>
+        <span class="success"></span>
+        <span class="fail"></span>
     </div>
 </div>
 

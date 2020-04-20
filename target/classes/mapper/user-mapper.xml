@@ -41,6 +41,10 @@
         values(#{username}, #{password}, #{salt}, #{email}, #{type}, #{status}, #{activationCode}, #{headerUrl}, #{createTime})
     </insert>
 
+    <update id="updatePhone">
+        update user set phone = #{phone} where id = #{id}
+    </update>
+
     <update id="updateStatus">
         update user set status = #{status} where id = #{id}
     </update>

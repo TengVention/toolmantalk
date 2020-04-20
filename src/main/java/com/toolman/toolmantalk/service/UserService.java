@@ -1,25 +1,89 @@
 package com.toolman.toolmantalk.service;
 
+import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
+import com.aliyuncs.exceptions.ClientException;
 import com.toolman.toolmantalk.dao.UserMapper;
 import com.toolman.toolmantalk.entity.User;
+import com.toolman.toolmantalk.util.AliyunSmsUtils;
 import com.toolman.toolmantalk.util.CommunityUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UserService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private AliyunSmsUtils aliyunSmsUtils;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
+    static final String verify_code = "user:phone_code";
+
+    /*通过id查找user*/
     public User findUserById(int id){
         return userMapper.selectById(id);
+    }
+
+    /*通过phone查找user*/
+    public User findUserByPhone(String phone){
+        return userMapper.selectByPhone(phone);
+    }
+
+    /*修改用户状态*/
+    public int updateUserStatus(int userId, int status){
+        return userMapper.updateStatus(userId, status);
+    }
+
+    /*更新手机号*/
+    public void updateUserPhone(int userId, String phone){
+        userMapper.updatePhone(userId, phone);
+    }
+
+    /*发送验证码*/
+    public Boolean sendVerifyCode(String phone,String code) {
+
+        try {
+            SendSmsResponse result = aliyunSmsUtils.sendSms(phone,code);
+            if (result.getCode().equals("OK")){
+                redisTemplate.opsForValue().set(verify_code+phone,code,50000, TimeUnit.MINUTES);
+                return true;
+            }else {
+                return false;
+            }
+        } catch (ClientException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    /*生成随机验证码*/
+    public String generateCode(int len){
+        len = Math.min(len, 8);
+        int min = Double.valueOf(Math.pow(10, len - 1)).intValue();
+        int num = new Random().nextInt(
+                Double.valueOf(Math.pow(10, len + 1)).intValue() - 1) + min;
+        return String.valueOf(num).substring(0,len);
+    }
+
+    /*验证码校验*/
+    public boolean checkCode(String phone, String verifyCode){
+        boolean result = redisTemplate.opsForValue().getOperations().hasKey(verify_code+phone);
+        if (result){
+            String code = redisTemplate.opsForValue().get(verify_code+phone);
+            if (code.equals(verifyCode))
+                return true;
+        }
+        return false;
     }
 
     /*通过用户名查找用户*/

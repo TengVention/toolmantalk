@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "sms",
+      "type": "com.toolman.toolmantalk.entity.SmsProperties",
+      "sourceType": "com.toolman.toolmantalk.entity.SmsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "sms.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.toolman.toolmantalk.entity.SmsProperties"
+    },
+    {
+      "name": "sms.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.toolman.toolmantalk.entity.SmsProperties"
+    },
+    {
+      "name": "sms.sign-name",
+      "type": "java.lang.String",
+      "sourceType": "com.toolman.toolmantalk.entity.SmsProperties"
+    },
+    {
+      "name": "sms.verify-code-template",
+      "type": "java.lang.String",
+      "sourceType": "com.toolman.toolmantalk.entity.SmsProperties"
+    }
+  ],
+  "hints": []
+}

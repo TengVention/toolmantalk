@@ -14,6 +14,8 @@ public interface UserMapper {
     User selectByPhone(String phone);
     //通过邮箱查找用户
     User selectByEmail(String email);
+    //更新手机号
+    int updatePhone(int id, String phone);
     //新增用户
     int insertUser(User user);
     //更新用户状态

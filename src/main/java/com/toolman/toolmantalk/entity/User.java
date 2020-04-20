@@ -4,6 +4,8 @@ import java.util.Date;
 
 /**
  *  用户实体类
+ *  status 0-未激活  1-激活
+ *  type 0-普通用户  1-超级管理员  2-版主
  */
 public class User {
     private int id;
