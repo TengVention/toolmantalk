@@ -1,12 +1,29 @@
 {
   "groups": [
     {
+      "name": "jwt.config",
+      "type": "com.toolman.toolmantalk.util.JwtUtils",
+      "sourceType": "com.toolman.toolmantalk.util.JwtUtils"
+    },
+    {
       "name": "sms",
       "type": "com.toolman.toolmantalk.entity.SmsProperties",
       "sourceType": "com.toolman.toolmantalk.entity.SmsProperties"
     }
   ],
   "properties": [
+    {
+      "name": "jwt.config.key",
+      "type": "java.lang.String",
+      "description": "签名私钥",
+      "sourceType": "com.toolman.toolmantalk.util.JwtUtils"
+    },
+    {
+      "name": "jwt.config.ttl",
+      "type": "java.lang.Long",
+      "description": "签名的失效时间",
+      "sourceType": "com.toolman.toolmantalk.util.JwtUtils"
+    },
     {
       "name": "sms.access-key-id",
       "type": "java.lang.String",

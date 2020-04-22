@@ -2,7 +2,9 @@ package com.toolman.toolmantalk.service;
 
 import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
+import com.toolman.toolmantalk.dao.LoginTicketMapper;
 import com.toolman.toolmantalk.dao.UserMapper;
+import com.toolman.toolmantalk.entity.LoginTicket;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.util.AliyunSmsUtils;
 import com.toolman.toolmantalk.util.CommunityUtil;
@@ -26,6 +28,8 @@ public class UserService {
     private AliyunSmsUtils aliyunSmsUtils;
     @Autowired
     private StringRedisTemplate redisTemplate;
+    @Autowired
+    private LoginTicketMapper loginTicketMapper;
 
     static final String verify_code = "user:phone_code";
 
@@ -145,5 +149,62 @@ public class UserService {
 
         return map;
 
+    }
+
+    /*登录*/
+    public Map<String, Object> login(String username, String password){
+        Map<String, Object> map = new HashMap<>();
+
+        // 空值处理
+        if (StringUtils.isBlank(username)) {
+            map.put("usernameMsg", "账号不能为空!");
+            return map;
+        }
+        if (StringUtils.isBlank(password)) {
+            map.put("passwordMsg", "密码不能为空!");
+            return map;
+        }
+
+        //验证账号
+        User user = userMapper.selectByName(username);
+        if (user == null){
+            map.put("usernameMsg","该账号不存在!");
+            return map;
+        }
+
+        //验证账号状态
+        if (user.getStatus()==0){
+            map.put("usernameMsg", "该账号未激活!");
+            return map;
+        }
+
+        //验证密码
+        password = CommunityUtil.md5(password + user.getSalt());
+        if (!user.getPassword().equals(password)){
+            map.put("passwordMsg", "密码不正确!");
+            return map;
+        }
+        //登录成功
+        map.put("success",0);
+
+        //生成登录凭证
+//        LoginTicket loginTicket = new LoginTicket();
+//        loginTicket.setUserId(user.getId());
+//        loginTicket.setTicket(CommunityUtil.generateUUID());
+//        loginTicket.setStatus(0);
+//        loginTicket.setExpired(new Date(System.currentTimeMillis() + expiredSeconds * 1000));
+//        loginTicketMapper.insertLoginTicket(loginTicket);
+
+//        map.put("ticket",loginTicket.getTicket());
+        return map;
+    }
+
+    /*注销*/
+    public void logout(String ticket){
+        loginTicketMapper.updateStatus(ticket, 1);
+    }
+
+    public LoginTicket findLoginTicket(String ticket){
+        return loginTicketMapper.selectByTicket(ticket);
     }
 }

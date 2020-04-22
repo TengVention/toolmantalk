@@ -1,8 +1,6 @@
 package com.toolman.toolmantalk;
 
-import com.toolman.toolmantalk.util.MailClient;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -12,8 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ContextConfiguration(classes = ToolManTalkApplication.class)
 public class MailTests {
 
-    @Autowired
-    private MailClient mailClient;
+//    @Autowired
+////    private MailClient mailClient;
 
 //    @Test
 //    public void testTextMail() {

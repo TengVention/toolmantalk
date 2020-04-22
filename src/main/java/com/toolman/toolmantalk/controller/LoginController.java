@@ -1,19 +1,22 @@
 package com.toolman.toolmantalk.controller;
 
+import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.UserService;
-import com.toolman.toolmantalk.util.AliyunSmsUtils;
-import com.toolman.toolmantalk.util.Result;
+import com.toolman.toolmantalk.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class LoginController {
+public class LoginController implements CommunityConstant {
 
     @Autowired
     UserService userService;
@@ -21,8 +24,53 @@ public class LoginController {
     AliyunSmsUtils aliyunSmsUtils;
     @Autowired
     StringRedisTemplate redisTemplate;
+    @Autowired
+    private JwtUtils jwtUtils;
+    @Autowired
+    HostHolder hostHolder;
+
+    @Value("${server.servlet.context-path}")
+    private String contextPath;
 
     static final String verify_code = "user:phone_code";
+
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @param rememberme
+     * @return
+     */
+    @PostMapping("/login")
+    @ExcludeInterceptor
+    public Object login(@RequestParam String username,
+                        @RequestParam String password,
+                        @RequestParam boolean rememberme,
+                        HttpServletResponse response){
+
+        //检查账号，密码
+        int expiredSeconds = rememberme ? REMEMBER_EXPIRED_SECONDS : DEFAULT_EXPIRED_SECONDS;
+        Map<String,Object> map = userService.login(username,password);
+        if (map.containsKey("success")){
+            User user = userService.findUserByName(username);
+            //登录成功
+            String token = jwtUtils.createJwt("1",username, new HashMap<>());
+            Cookie cookie = new Cookie("token",token);
+            cookie.setPath(contextPath);
+            cookie.setMaxAge(expiredSeconds);
+            response.addCookie(cookie);
+            return Result.success();
+        }
+        return map;
+    }
+
+    @GetMapping("/logout")
+    public Object logout(@CookieValue("ticket") String ticket){
+        userService.logout(ticket);
+        return Result.success("注销成功");
+    }
+
+
 
     /**
      * 注册
@@ -39,6 +87,13 @@ public class LoginController {
             return Result.success(map);
         }
         return map;
+    }
+
+    @GetMapping("/info")
+    @ResponseBody
+    public Result getUserInfo(){
+        User user = hostHolder.getUser();
+        return Result.success(user);
     }
 
     /**
@@ -62,15 +117,18 @@ public class LoginController {
         return Result.fail("手机号已被注册!");
     }
 
+    /*验证码激活*/
     @PostMapping("/sms/checkCode")
     public Object checkCode(@RequestParam String code,
                             @RequestParam String phone){
         boolean result = userService.checkCode(phone,code);
         if (result){
-            Map<String,Object> map = new HashMap<>();
             User user = userService.findUserByPhone(phone);
             if (user==null){
                 return Result.fail("该手机号未注册!");
+            }
+            if (user.getStatus()==1){
+                return Result.fail("该账号已激活，请勿重复激活!");
             }
             userService.updateUserStatus(user.getId(), 1);
             return Result.success("激活成功");
