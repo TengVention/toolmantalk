@@ -2,45 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="796a57bf-de8d-491b-a2fd-2602f4c9cc47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/annotation/ExcludeInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/interceptor/LoginTicketInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/LoginTicketMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/LoginTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/UserVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CookieUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/HostHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/annotation/ExcludeInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/config/WebMvcConfiguration$SecurityInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/config/WebMvcConfiguration.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/interceptor/LoginTicketInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/dao/LoginTicketMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/entity/LoginTicket.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/entity/UserVo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CookieUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/HostHolder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/JwtUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/META-INF/toolmantalk.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Page.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/MailClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/MailTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/MailTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/entity/Page.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CommunityConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CommunityConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/MailClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/toolman/toolmantalk/MailTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/toolman/toolmantalk/MailTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
+            <state relative-caret-position="397">
+              <caret line="120" column="32" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -385,7 +347,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -514,7 +476,7 @@
       <workItem from="1587280471050" duration="16493000" />
       <workItem from="1587365002174" duration="21858000" />
       <workItem from="1587430160938" duration="22507000" />
-      <workItem from="1587526424392" duration="2735000" />
+      <workItem from="1587526424392" duration="3249000" />
     </task>
     <task id="LOCAL-00001" summary="toolmantalk环境搭建">
       <created>1586946187474</created>
@@ -558,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587365170096</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="完成登录功能传递token凭证">
+      <created>1587535479626</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587535479627</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -579,7 +548,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141460000" />
+    <option name="totallyTimeSpent" value="141974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="983" y="0" width="932" height="1044" extended-state="0" />
@@ -657,7 +626,8 @@
     <MESSAGE value="模式了帖子部分的前端数据显示" />
     <MESSAGE value="首页数据模拟前端渲染" />
     <MESSAGE value="完成注册，手机号验证码激活" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成注册，手机号验证码激活" />
+    <MESSAGE value="完成登录功能传递token凭证" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成登录功能传递token凭证" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/ToolManTalkApplication.java">
@@ -1073,8 +1043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
+        <state relative-caret-position="397">
+          <caret line="120" column="32" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

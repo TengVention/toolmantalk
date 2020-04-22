@@ -112,7 +112,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             ExcludeInterceptor excludeInterceptor = handlerMethod.getMethodAnnotation(ExcludeInterceptor.class);
             if (excludeInterceptor == null || !excludeInterceptor.value()){
-
+                //验证cookie中的token
                 if (CookieUtil.getValue(request, "token")==null){
                     response.setStatus(401);
                     response.sendError(401, "登录失效,请重新登录");
