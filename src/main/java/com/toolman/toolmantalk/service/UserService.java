@@ -4,7 +4,6 @@ import com.aliyuncs.dysmsapi.model.v20170525.SendSmsResponse;
 import com.aliyuncs.exceptions.ClientException;
 import com.toolman.toolmantalk.dao.LoginTicketMapper;
 import com.toolman.toolmantalk.dao.UserMapper;
-import com.toolman.toolmantalk.entity.LoginTicket;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.util.AliyunSmsUtils;
 import com.toolman.toolmantalk.util.CommunityUtil;
@@ -30,6 +29,7 @@ public class UserService {
     private StringRedisTemplate redisTemplate;
     @Autowired
     private LoginTicketMapper loginTicketMapper;
+
 
     static final String verify_code = "user:phone_code";
 
@@ -204,7 +204,11 @@ public class UserService {
         loginTicketMapper.updateStatus(ticket, 1);
     }
 
-    public LoginTicket findLoginTicket(String ticket){
-        return loginTicketMapper.selectByTicket(ticket);
+//    public LoginTicket findLoginTicket(String ticket){
+//        return loginTicketMapper.selectByTicket(ticket);
+//    }
+
+    public int updateHeader(int userId, String headerUrl) {
+        return userMapper.updateHeader(userId, headerUrl);
     }
 }

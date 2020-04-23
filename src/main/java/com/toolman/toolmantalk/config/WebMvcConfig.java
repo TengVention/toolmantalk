@@ -85,7 +85,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         list.add("/static/**");
         list.add("/loginPage");
         list.add("/register");
-        list.add("/userSetting");
+        list.add("/user/setting");
         interceptor.excludePathPatterns(list);
     }
 

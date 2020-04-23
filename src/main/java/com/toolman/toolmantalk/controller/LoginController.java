@@ -176,11 +176,4 @@ public class LoginController implements CommunityConstant {
         ModelAndView mv = new ModelAndView("loginPage");
         return mv;
     }
-
-    @GetMapping("/userSetting")
-    public ModelAndView userSetting(){
-        ModelAndView mv = new ModelAndView("usersetting");
-        return mv;
-    }
-
 }

@@ -50,32 +50,34 @@
 
 
 <div id="app">
-    <table id="heroListTable" >
 
+    <table class="updateHeaderImage">
         <tr>
-            <td colspan="2">用户名</td>
-            <td>头像</td>
+            <td>请选择你的头像</td>
+            <td colspan="2">头像预览</td>
         </tr>
-
         <tr>
-            <td colspan="2"><span>{{username}}</span></td>
-            <td><span>{{headerUrl}}</span></td>
+            <td>
+                <input type="file" id="headerImage" @change="getHeaderImage($event)" name="headerImage">
+                <button type="submit" @click="updateHeader">提交</button>
+            </td>
+            <td>
+                <img style="height: 50px;width: 50px;" :src="user.headerUrl" alt="">
+            </td>
         </tr>
-
-        <tr>
-
-        </tr>
-
     </table>
+
 </div>
 
 <script type="text/javascript">
 
     var data4Vue = {
-        uri:'getUser',
-        user:{},
+        uri:'upload',
+        user:[],
+        flag:'',
         username:'',
-        headerUrl:''
+        headerImage:'',
+        imgFile:''
     };
 
     //ViewModel
@@ -83,21 +85,31 @@
         el: '#app',
         data: data4Vue,
         mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
-            this.list();
+            this.getUser();
         },
         methods: {
-            list:function () {
-                var url = this.uri;
+            getUser:function () {
+                var url = "http://localhost:8080/toolmantalk/getUser";
                 axios.get(url).then(function (response) {
-                    vue.user = response.data;
-                    vue.username = vue.user.data.username;
-                    vue.headerUrl = vue.user.data.headerUrl;
+                    var result = response.data;
+                    if (result.code == 0) {
+                        vue.user = result.data;
+                    }else {
+                        vue.flag = result.flag;
+                    }
                 });
-                // axios.get(url).then(function (response) {
-                //     vue.user = response.data;
-                //     vue.username = vue.user.data.username;
-                //     vue.headerUrl = vue.user.data.headerUrl;
-                // });
+            },
+            updateHeader:function () {
+                var url = this.uri;
+                var formData = new FormData();
+                formData.append("headerImage",this.headerImage);
+                axios.post(url,formData).then(function (response) {
+                    vue.headerImage = null;
+                    window.location.reload();
+                });
+            },
+            getHeaderImage: function (event) {
+                this.headerImage = event.target.files[0];
             }
         }
     });

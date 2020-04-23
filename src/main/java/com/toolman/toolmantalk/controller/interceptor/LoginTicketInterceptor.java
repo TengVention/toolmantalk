@@ -1,21 +1,16 @@
 package com.toolman.toolmantalk.controller.interceptor;
 
-import com.toolman.toolmantalk.entity.LoginTicket;
-import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.UserService;
 import com.toolman.toolmantalk.util.CookieUtil;
 import com.toolman.toolmantalk.util.HostHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 
-@Component
 public class LoginTicketInterceptor implements HandlerInterceptor {
 
     @Autowired
@@ -35,19 +30,19 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
         //从cookie中获取凭证
         String ticket = CookieUtil.getValue(request, "ticket");
 
-        //判断凭证非空
-        if (ticket != null){
-            //查询凭证
-            LoginTicket loginTicket = userService.findLoginTicket(ticket);
-            // 检查凭证是否有效
-            if (loginTicket != null && loginTicket.getStatus() == 0 && loginTicket.getExpired().after(new Date())){
-                //根据凭证拿到的用户id查询用户
-                User user = userService.findUserById(loginTicket.getUserId());
-                //在本次请求中持有用户
-                hostHolder.setUser(user);
-                return true;
-            }
-        }
+//        //判断凭证非空
+//        if (ticket != null){
+//            //查询凭证
+//            LoginTicket loginTicket = userService.findLoginTicket(ticket);
+//            // 检查凭证是否有效
+//            if (loginTicket != null && loginTicket.getStatus() == 0 && loginTicket.getExpired().after(new Date())){
+//                //根据凭证拿到的用户id查询用户
+//                User user = userService.findUserById(loginTicket.getUserId());
+//                //在本次请求中持有用户
+//                hostHolder.setUser(user);
+//                return true;
+//            }
+//        }
         return false;
     }
 
