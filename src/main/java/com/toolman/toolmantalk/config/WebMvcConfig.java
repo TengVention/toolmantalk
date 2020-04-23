@@ -1,7 +1,6 @@
 package com.toolman.toolmantalk.config;
 
-import com.alibaba.fastjson.support.config.FastJsonConfig;
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.alibaba.fastjson.JSONObject;
 import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.UserService;
@@ -14,24 +13,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 @Configuration
-public class WebMvcConfiguration extends WebMvcConfigurationSupport {
+public class WebMvcConfig implements WebMvcConfigurer {
+
     @Autowired
     private JwtUtils jwtUtils;
     @Autowired
@@ -40,20 +36,12 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     private HostHolder hostHolder;
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    protected static Collection<HandlerMethodArgumentResolver> methodArgumentResolverList;
+
 
     @Override
-    protected void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-        super.addArgumentResolvers(argumentResolvers);
-        if (methodArgumentResolverList!=null){
-            argumentResolvers.addAll(methodArgumentResolverList);
-        }
-    }
-
-    @Override
-    protected void addCorsMappings(CorsRegistry registry) {
+    public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")// 允许跨域访问的路径
-                //.allowedOrigins("*")// 允许跨域访问的源
+                .allowedOrigins("*")// 允许跨域访问的源
                 .allowedMethods("GET","POST","PUT", "OPTIONS", "DELETE", "PATCH")// 允许请求方法
                 .allowCredentials(true)// 是否发送cookie
                 //.allowedHeaders("*")// 允许头部设置
@@ -62,25 +50,26 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     /**
      * FastJson配置
+     *  配置错误信息返回为JSON格式
      */
-    @Override
-    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(fastJsonHttpMessageConverters());
-    }
+//    @Override
+//    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+//        converters.add(fastJsonHttpMessageConverters());
+//    }
 
-    @Bean
-    public HttpMessageConverter fastJsonHttpMessageConverters() {
-        //1. 需要定义一个converter转换消息的对象
-        FastJsonHttpMessageConverter fasHttpMessageConverter = new FastJsonHttpMessageConverter();
-        //2. 添加fastjson的配置信息，比如:是否需要格式化返回的json的数据
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();//3. 处理中文乱码问题
-        List<MediaType> fastMediaTypes = new ArrayList<>();
-        fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
-        fasHttpMessageConverter.setSupportedMediaTypes(fastMediaTypes);
-        //4. 在converter中添加配置信息
-        fasHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
-        return fasHttpMessageConverter;
-    }
+//    @Bean
+//    public HttpMessageConverter fastJsonHttpMessageConverters() {
+//        //1. 需要定义一个converter转换消息的对象
+//        FastJsonHttpMessageConverter fasHttpMessageConverter = new FastJsonHttpMessageConverter();
+//        //2. 添加fastjson的配置信息，比如:是否需要格式化返回的json的数据
+//        FastJsonConfig fastJsonConfig = new FastJsonConfig();//3. 处理中文乱码问题
+//        List<MediaType> fastMediaTypes = new ArrayList<>();
+//        fastMediaTypes.add(MediaType.APPLICATION_JSON_UTF8);
+//        fasHttpMessageConverter.setSupportedMediaTypes(fastMediaTypes);
+//        //4. 在converter中添加配置信息
+//        fasHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
+//        return fasHttpMessageConverter;
+//    }
 
     @Bean
     public SecurityInterceptor getSecurityInterceptor() {
@@ -88,16 +77,20 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     }
 
     @Override
-    protected void addInterceptors(InterceptorRegistry registry) {
+    public void addInterceptors(InterceptorRegistry registry) {
         InterceptorRegistration interceptor = registry.addInterceptor(getSecurityInterceptor());
         ArrayList<String> list = new ArrayList<>();
-        list.add("/error");
+        list.add("/js/**");
+        list.add("/listPost");
         list.add("/static/**");
+        list.add("/loginPage");
+        list.add("/register");
+        list.add("/userSetting");
         interceptor.excludePathPatterns(list);
-        super.addInterceptors(registry);
     }
 
-    protected class SecurityInterceptor extends HandlerInterceptorAdapter{
+
+    protected class SecurityInterceptor extends HandlerInterceptorAdapter {
         @Override
         public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
             System.out.println(request.getMethod());
@@ -112,18 +105,42 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             ExcludeInterceptor excludeInterceptor = handlerMethod.getMethodAnnotation(ExcludeInterceptor.class);
             if (excludeInterceptor == null || !excludeInterceptor.value()){
+                response.setCharacterEncoding("UTF-8");
+                response.setContentType("application/json; charset=utf-8");
+                PrintWriter out = null ;
                 //验证cookie中的token
                 if (CookieUtil.getValue(request, "token")==null){
-                    response.setStatus(401);
-                    response.sendError(401, "登录失效,请重新登录");
-                    return false;
+
+                    try{
+                        JSONObject res = new JSONObject();
+                        res.put("flag","false");
+                        res.put("msg","token失效,请重新登录!");
+                        out = response.getWriter();
+                        out.append(res.toString());
+                        return false;
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                        response.sendError(500);
+                        return false;
+                    }
                 }else {
                     String token = CookieUtil.getValue(request, "token");
                     Claims claims = jwtUtils.parseJwt(token);
                     if (claims == null){
-                        response.setStatus(401);
-                        response.sendError(401, "登录失效,请重新登录");
-                        return false;
+                        try{
+                            JSONObject res = new JSONObject();
+                            res.put("flag","false");
+                            res.put("msg","伪造token，请求无效!");
+                            out = response.getWriter();
+                            out.append(res.toString());
+                            return false;
+                        }
+                        catch (Exception e) {
+                            e.printStackTrace();
+                            response.sendError(500);
+                            return false;
+                        }
                     }
 
                     String username = claims.getSubject();

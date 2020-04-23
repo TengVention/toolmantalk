@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/toolmantalk/static/js/jquery.min.js"></script>
+    <script src="/toolmantalk/static/js/vue.min.js"></script>
+    <script src="/toolmantalk/static/js/axios.min.js"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:400px;
+            padding:20px;
+
+        }
+
+        div#pagination{
+            text-align: center;
+            line-height: 100px;
+        }
+        div#pagination a{
+            text-decoration:none;
+        }
+
+        .disableHref{
+            cursor:default;
+            color:#E5E0E0;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <script>
+        $(function () {
+            var data4Vue = {
+                uri: 'login',
+                result: [],
+                user:{username:'',password:'',rememberme:false }
+            };
+            //ViewModel
+            var vue = new Vue({
+                el: '#workingArea',
+                data: data4Vue,
+                mounted: function () {
+
+                },
+                methods: {
+                    login: function () {
+                        var url = this.uri;
+                        if(0==this.user.username.length){
+                            $("span.errorMessage").html("请输入用户名");
+                            return;
+                        }
+                        if(0==this.user.password.length){
+                            $("span.errorMessage").html("请输入密码");
+                            return;
+                        }
+                        axios.post(url,this.user).then(function (response) {
+                            var result = response.data;
+                            if (result.code == 0) {
+                                location.href="listPost";
+                            }
+                            else {
+                                $("span.errorMessage").html(result.errormessage);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+    <div id="workingArea">
+
+        <table class="registerTable" align="center">
+            <tr>
+                <td  class="registerTip registerTableLeftTD">登录页面</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="registerTableLeftTD">用户名</td>
+                <td  class="registerTableRightTD"><input v-model="user.username" placeholder="请输入用户名" > </td>
+            </tr>
+
+            <tr>
+                <td class="registerTableLeftTD">登陆密码</td>
+                <td class="registerTableRightTD"><input v-model="user.password"  type="password"  placeholder="请输入你的登陆密码" > </td>
+            </tr>
+
+            <tr>
+                <td colspan="1" class="registerButtonTD">
+                    <a @click="login"><button>提   交</button></a>
+                </td>
+                <td><input v-model="user.rememberme" type="checkbox">记住我</td>
+            </tr>
+
+            <tr>
+                <td>提示</td>
+                <td>
+                    <span class="errorMessage"></span>
+                </td>
+            </tr>
+        </table>
+        <span class="success"></span>
+        <span class="fail"></span>
+    </div>
+</div>
+
+
+</body>
+</html>

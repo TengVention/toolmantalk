@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/vue.min.js"></script>
-    <script src="./js/axios.min.js"></script>
+    <script src="/toolmantalk/static/js/jquery.min.js"></script>
+    <script src="/toolmantalk/static/js/vue.min.js"></script>
+    <script src="/toolmantalk/static/js/axios.min.js"></script>
     <style type="text/css">
         td{
             border:1px solid gray;
@@ -58,23 +58,23 @@
                     register: function () {
                         var url = this.uri;
                         if(0==this.user.username.length){
-                            $("span.errorMessage").html("请输入用户名");
+                            $("span.errorMessage").html("请输入用户名!");
                             return;
                         }
                         if(0==this.user.email.length){
-                            $("span.errorMessage").html("请输入邮箱");
+                            $("span.errorMessage").html("请输入邮箱!");
                             return;
                         }
                         if(0==this.user.password.length){
-                            $("span.errorMessage").html("请输入密码");
+                            $("span.errorMessage").html("请输入密码!");
                             return;
                         }
                         if(0==this.user.repeatpassword.length){
-                            $("span.errorMessage").html("请输入重复密码");
+                            $("span.errorMessage").html("请输入重复密码!");
                             return;
                         }
                         if(this.user.password !=this.user.repeatpassword){
-                            $("span.errorMessage").html("重复密码不一致");
+                            $("span.errorMessage").html("重复密码不一致!");
                             return;
                         }
 
@@ -101,6 +101,10 @@
                         });
                     },
                     checkCode: function () {
+                        if(0==this.verifycode.length){
+                            $("span.fail").html("请输入验证码!");
+                            return;
+                        }
                         var code = vue.verifycode;
                         var url = "sms/checkCode?code="+code+"&phone="+vue.user.phone;
                         axios.post(url).then(function (response) { 
@@ -108,8 +112,11 @@
                             if (result.code==0){
                                 $("table.activatedTable").css("visibility","hidden");
                                 $("span.success").html(result.data);
+                                setTimeout(function () {
+                                    location.href = "/toolmantalk/loginPage";
+                                },3000);
                             }else {
-                                $("span.fail").html(result.data);
+                                $("span.fail").html(result.message);
                             }
                         });
                     }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/toolmantalk/static/js/jquery.min.js"></script>
+    <script src="/toolmantalk/static/js/vue.min.js"></script>
+    <script src="/toolmantalk/static/js/axios.min.js"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:400px;
+            padding:20px;
+
+        }
+
+        div#pagination{
+            text-align: center;
+            line-height: 100px;
+        }
+        div#pagination a{
+            text-decoration:none;
+        }
+
+        .disableHref{
+            cursor:default;
+            color:#E5E0E0;
+            text-decoration:none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("a.disableHref").click(function(event){
+                return false;
+//                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="user"></div>
+
+
+<div id="app">
+    <table id="heroListTable" >
+
+        <tr>
+            <td colspan="2">用户名</td>
+            <td>头像</td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><span>{{username}}</span></td>
+            <td><span>{{headerUrl}}</span></td>
+        </tr>
+
+        <tr>
+
+        </tr>
+
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    var data4Vue = {
+        uri:'getUser',
+        user:{},
+        username:'',
+        headerUrl:''
+    };
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data4Vue,
+        mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
+            this.list();
+        },
+        methods: {
+            list:function () {
+                var url = this.uri;
+                axios.get(url).then(function (response) {
+                    vue.user = response.data;
+                    vue.username = vue.user.data.username;
+                    vue.headerUrl = vue.user.data.headerUrl;
+                });
+                // axios.get(url).then(function (response) {
+                //     vue.user = response.data;
+                //     vue.username = vue.user.data.username;
+                //     vue.headerUrl = vue.user.data.headerUrl;
+                // });
+            }
+        }
+    });
+    //
+    // var url = "getUser";
+    // axios.get(url).then(function (response){
+    //     var result = response.data;
+    //     var resultString = JSON.stringify(result);
+    //     document.getElementById("user").innerHTML = "通过 axios 获取到的json数据：" + resultString;
+    // });
+
+</script>
+</body>
+</html>

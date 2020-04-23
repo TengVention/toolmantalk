@@ -2,6 +2,7 @@ package com.toolman.toolmantalk.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.DiscussPost;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.DiscussPostService;
@@ -9,7 +10,6 @@ import com.toolman.toolmantalk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import java.util.List;
 
 @RestController
@@ -21,7 +21,7 @@ public class DiscussPostController {
     UserService userService;
 
     @GetMapping("/discussposts")
-    @CrossOrigin
+    @ExcludeInterceptor
     public PageInfo<DiscussPost> list(@RequestParam(value = "start", defaultValue = "1") int start,
                                       @RequestParam(value = "size", defaultValue = "7") int size){
         PageHelper.startPage(start, size);

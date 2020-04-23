@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,46 +37,70 @@ public class LoginController implements CommunityConstant {
 
     /**
      * 登录
-     * @param username
-     * @param password
-     * @param rememberme
+     *
      * @return
      */
     @PostMapping("/login")
     @ExcludeInterceptor
-    public Object login(@RequestParam String username,
-                        @RequestParam String password,
-                        @RequestParam boolean rememberme,
+    public Object login(//@RequestParam String username,
+                        //@RequestParam String password,
+                        //@RequestParam(defaultValue = "false") boolean rememberme,
+                        @RequestBody Map<String, Object> loginMap,
                         HttpServletResponse response){
 
+        String username = (String) loginMap.get("username");
+        String password = (String) loginMap.get("password");
+        boolean rememberme = (boolean) loginMap.get("rememberme");
         //检查账号，密码
         int expiredSeconds = rememberme ? REMEMBER_EXPIRED_SECONDS : DEFAULT_EXPIRED_SECONDS;
         Map<String,Object> map = userService.login(username,password);
         if (map.containsKey("success")){
             User user = userService.findUserByName(username);
             //登录成功
-            String token = jwtUtils.createJwt("1",username, new HashMap<>());
+            String token = jwtUtils.createJwt("1", username, expiredSeconds, new HashMap());
             Cookie cookie = new Cookie("token",token);
             cookie.setPath(contextPath);
             cookie.setMaxAge(expiredSeconds);
             response.addCookie(cookie);
-            return Result.success();
+            return Result.success("登录成功!");
         }
         return map;
     }
 
+    /**
+     *  注销
+     *  cookie设为过期
+     * @param request
+     * @param response
+     * @return
+     */
     @GetMapping("/logout")
-    public Object logout(@CookieValue("ticket") String ticket){
-        userService.logout(ticket);
+    public Object logout(HttpServletRequest request,
+                         HttpServletResponse response){
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies){
+            if (cookie.getName().equals("token")){
+                cookie.setValue(null);
+                cookie.setMaxAge(0);
+                cookie.setPath(contextPath);
+                response.addCookie(cookie);
+                break;
+            }
+        }
         return Result.success("注销成功");
     }
 
-
+    @GetMapping("/getUser")
+    public Object getUserInfo(){
+        User user = hostHolder.getUser();
+        return Result.success(user);
+    }
 
     /**
      * 注册
      * @return
      */
+    @ExcludeInterceptor
     @PostMapping("/register")
     @CrossOrigin
     public Object register(@RequestBody User user){
@@ -89,18 +114,13 @@ public class LoginController implements CommunityConstant {
         return map;
     }
 
-    @GetMapping("/info")
-    @ResponseBody
-    public Result getUserInfo(){
-        User user = hostHolder.getUser();
-        return Result.success(user);
-    }
 
     /**
      * 发送短信验证码
      * @param user
      * @return
      */
+    @ExcludeInterceptor
     @PostMapping("/sms")
     public Object sendCode(@RequestBody User user){
         String code = userService.generateCode(6);
@@ -118,6 +138,7 @@ public class LoginController implements CommunityConstant {
     }
 
     /*验证码激活*/
+    @ExcludeInterceptor
     @PostMapping("/sms/checkCode")
     public Object checkCode(@RequestParam String code,
                             @RequestParam String phone){
@@ -148,6 +169,17 @@ public class LoginController implements CommunityConstant {
     @GetMapping("/activation/{id}")
     public ModelAndView activation(){
         ModelAndView mv = new ModelAndView("activation");
+        return mv;
+    }
+    @GetMapping("/loginPage")
+    public ModelAndView login(){
+        ModelAndView mv = new ModelAndView("loginPage");
+        return mv;
+    }
+
+    @GetMapping("/userSetting")
+    public ModelAndView userSetting(){
+        ModelAndView mv = new ModelAndView("usersetting");
         return mv;
     }
 

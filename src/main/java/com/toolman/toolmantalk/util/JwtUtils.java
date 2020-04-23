@@ -12,7 +12,7 @@ import java.util.Map;
 
 @ConfigurationProperties("jwt.config")
 @Component
-public class JwtUtils {
+public class JwtUtils implements CommunityConstant {
 
     /**
      * 签名私钥
@@ -28,10 +28,11 @@ public class JwtUtils {
      * id:登录用户id
      * subject：登录用户名
      */
-    public String createJwt(String id, String name, Map<String, Object> map) {
+    public String createJwt(String id, String name,int expiredSeconds, Map<String, Object> map) {
         //1.设置失效时间
         long now = System.currentTimeMillis();
-        long exp = now + ttl;
+        long expiredMillis = (long) expiredSeconds * 1000;
+        long exp = now + expiredMillis;
         //2.创建jwtBuilder
         JwtBuilder jwtBuilder = Jwts.builder().setId(id).setSubject(name)
                 .setIssuedAt(new Date())

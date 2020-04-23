@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/vue.min.js"></script>
-    <script src="./js/axios.min.js"></script>
+    <script src="/toolmantalk/static/js/jquery.min.js"></script>
+    <script src="/toolmantalk/static/js/vue.min.js"></script>
+    <script src="/toolmantalk/static/js/axios.min.js"></script>
     <style type="text/css">
         td{
             border:1px solid gray;
@@ -49,7 +49,26 @@
 
 
 <div id="app">
+
+    <div v-if="user.username!=null">
+        <div>
+            你好！  <span style="background-color:yellow;">{{user.username}}</span>
+        </div>
+        <div>
+            头像：<span style="background-color:skyblue">{{user.headerUrl}}</span>
+        </div>
+        <div>
+            注销：<a href="#" @click="logout">点这</a>
+        </div>
+    </div>
+    <div v-if="flag=='false'">
+        <a href="/toolmantalk/loginPage">登录</a>
+        <a href="/toolmantalk/register">注册</a>
+    </div>
+
+
     <table id="heroListTable" >
+
         <tr>
             <td colspan="3">
                 <div id="pagination" >
@@ -82,8 +101,11 @@
 
 <script type="text/javascript">
     var data4Vue = {
+        uri:'getUser',
         posts: [],
-        pagination:{}
+        pagination:{},
+        user:[],
+        flag:''
     };
 
     //ViewModel
@@ -92,13 +114,25 @@
         data: data4Vue,
         mounted:function(){ //mounted　表示这个 Vue 对象加载成功了
             this.list(1);
+            this.getUser();
         },
         methods: {
             list:function(start) {
-                var url = "http://127.0.0.1:8080/toolmantalk/discussposts?start="+start;
+                var url = "discussposts?start="+start;
                 axios.get(url).then(function (response) {
                     vue.pagination = response.data;
                     vue.posts = response.data.list;
+                });
+            },
+            getUser:function () {
+                var url = this.uri;
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    if (result.code == 0) {
+                        vue.user = result.data;
+                    }else {
+                        vue.flag = result.flag;
+                    }
                 });
             },
             jump: function(page){
@@ -118,6 +152,16 @@
             jumpByNumber: function(start){
                 if(start!=vue.pagination.pageNum)
                     vue.list(start);
+            },
+            logout:function () {
+                var url = "logout";
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    //如果注销成功 返回登录页面
+                    if (result.code==0){
+                        location.href="loginPage";
+                    }
+                });
             }
         }
     });
