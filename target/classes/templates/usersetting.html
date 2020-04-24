@@ -46,10 +46,24 @@
 </head>
 <body>
 
-<div id="user"></div>
-
-
 <div id="app">
+
+    <div v-if="user.username!=null">
+        <div>
+            你好！  <span style="background-color:yellow;">{{user.username}}</span>
+        </div>
+        <div>
+            头像：<span style="background-color:skyblue">{{user.headerUrl}}</span>
+            <img style="height: 50px;width: 50px;" :src="user.headerUrl" alt="">
+        </div>
+        <div>
+            注销：<a href="#" @click="logout">点这</a>
+        </div>
+    </div>
+    <div v-if="flag=='false'">
+        <a href="/toolmantalk/loginPage">登录</a>
+        <a href="/toolmantalk/register">注册</a>
+    </div>
 
     <table class="updateHeaderImage">
         <tr>
@@ -65,6 +79,29 @@
                 <img style="height: 50px;width: 50px;" :src="user.headerUrl" alt="">
             </td>
         </tr>
+
+        <tr>
+            <td colspan="2">修改密码</td>
+        </tr>
+
+        <tr>
+            <td class="registerTableLeftTD">原密码</td>
+            <td  class="registerTableRightTD"><input v-model="password.oldPassword" placeholder="请输入原密码" > </td>
+        </tr>
+
+        <tr>
+            <td class="registerTableLeftTD">新密码</td>
+            <td  class="registerTableRightTD"><input v-model="password.newPassword" type="password" placeholder="请输入新密码" > </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button @click="changePassword">修改密码</button>
+            </td>
+            <td>
+                提示： <span class="errorMessage"></span><span class="successMessage"></span>
+            </td>
+        </tr>
     </table>
 
 </div>
@@ -72,13 +109,20 @@
 <script type="text/javascript">
 
     var data4Vue = {
-        uri:'upload',
+        //全局路径
+        contextPath:'http://localhost:8080/toolmantalk/',
+        logoutUri:'logout',//注销
+        changePasswordUri:'user/changePassword',//修改密码
+        uploadHeaderUri:'user/uploadHeader',//上传头像
+        getUserUri:'getUser',
         user:[],
+        password:{oldPassword:'',newPassword:''},
         flag:'',
         username:'',
         headerImage:'',
         imgFile:''
     };
+
 
     //ViewModel
     var vue = new Vue({
@@ -89,7 +133,7 @@
         },
         methods: {
             getUser:function () {
-                var url = "http://localhost:8080/toolmantalk/getUser";
+                var url = this.contextPath + this.getUserUri;
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     if (result.code == 0) {
@@ -100,7 +144,7 @@
                 });
             },
             updateHeader:function () {
-                var url = this.uri;
+                var url = this.contextPath + this.uploadHeaderUri;
                 var formData = new FormData();
                 formData.append("headerImage",this.headerImage);
                 axios.post(url,formData).then(function (response) {
@@ -110,6 +154,39 @@
             },
             getHeaderImage: function (event) {
                 this.headerImage = event.target.files[0];
+            },
+            logout:function () {
+                var url = this.contextPath + this.logoutUri;
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    //如果注销成功 返回登录页面
+                    if (result.code==0){
+                        location.href="http://localhost:8080/toolmantalk/loginPage";
+                    }
+                });
+            },
+            changePassword:function () {
+                if(0==this.password.oldPassword.length){
+                    $("span.errorMessage").html("请输入原密码!");
+                    return;
+                }
+                if(0==this.password.newPassword.length){
+                    $("span.errorMessage").html("请输入新密码!");
+                    return;
+                }
+                if(this.password.oldPassword==this.password.newPassword){
+                    $("span.errorMessage").html("新密码不能和原密码一样!");
+                    return;
+                }
+                var url = this.contextPath + this.changePasswordUri;
+                axios.post(url,this.password).then(function (response) {
+                    var result = response.data;
+                    if (result.code == 0) {
+                        $("span.successMessage").html(result.data);
+                    }else {
+                        $("span.errorMessage").html(result.data.errorMsg);
+                    }
+                });
             }
         }
     });

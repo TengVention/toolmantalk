@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -41,7 +42,12 @@ public class UserController {
     @Autowired
     private HostHolder hostHolder;
 
-    @PostMapping("/upload")
+    /**
+     * 更新头像
+     * @param headerImage
+     * @return
+     */
+    @PostMapping("/uploadHeader")
     public Object uploadHeader(MultipartFile headerImage){
         if (headerImage == null){
             return Result.fail("您还没有选择图片!");
@@ -75,7 +81,11 @@ public class UserController {
         return Result.success("更新头像成功!");
     }
 
-    /*获得头像*/
+    /**
+     * 获取头像
+     * @param fileName
+     * @param response
+     */
     @GetMapping("/header/{fileName}")
     public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response){
         //服务器存放路径
@@ -101,6 +111,29 @@ public class UserController {
         }
     }
 
+    @PostMapping("/changePassword")
+    public Object changePassword(@RequestBody Map<String, Object> loginMap){
+        //旧密码
+        String oldPassword = (String) loginMap.get("oldPassword");
+        //新密码
+        String newPassword = (String) loginMap.get("newPassword");
+        if (newPassword.equals(oldPassword)){
+            return Result.fail("新密码不能和原密码一样!");
+        }
+        User user = hostHolder.getUser();
+        Map<String, Object> map = userService.changPassword(user.getId(), oldPassword, newPassword);
+
+        //判断修改密码是否返回错误信息
+        if (map == null || map.isEmpty()) {
+            return Result.success("修改密码成功");
+        }
+        return Result.fail(map);
+    }
+
+
+
+
+//    前端页面跳转
     /*用户设置页面*/
     @GetMapping("/setting")
     public ModelAndView setting(){

@@ -28,6 +28,9 @@ public class Result {
     public static Result fail(String  message) {
         return new Result(FAIL_CODE,message,null);
     }
+    public static Result fail(Object data) {
+        return new Result(FAIL_CODE,"",data);
+    }
 
     public int getCode() {
         return code;

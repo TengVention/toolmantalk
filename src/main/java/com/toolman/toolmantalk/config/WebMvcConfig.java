@@ -85,7 +85,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         list.add("/static/**");
         list.add("/loginPage");
         list.add("/register");
-        list.add("/user/setting");
         interceptor.excludePathPatterns(list);
     }
 
@@ -114,7 +113,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                     try{
                         JSONObject res = new JSONObject();
                         res.put("flag","false");
-                        res.put("msg","token失效,请重新登录!");
+                        res.put("msg","您当前未登录,请重新登录!");
                         out = response.getWriter();
                         out.append(res.toString());
                         return false;

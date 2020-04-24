@@ -102,7 +102,7 @@
 
 <script type="text/javascript">
     var data4Vue = {
-        uri:'getUser',
+        contextPath:'http://localhost:8080/toolmantalk/',
         posts: [],
         pagination:{},
         user:[],
@@ -119,14 +119,14 @@
         },
         methods: {
             list:function(start) {
-                var url = "discussposts?start="+start;
+                var url = this.contextPath+"discussposts?start="+start;
                 axios.get(url).then(function (response) {
                     vue.pagination = response.data;
                     vue.posts = response.data.list;
                 });
             },
             getUser:function () {
-                var url = this.uri;
+                var url = this.contextPath+"getUser";
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     if (result.code == 0) {

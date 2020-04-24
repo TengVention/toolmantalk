@@ -208,7 +208,41 @@ public class UserService {
 //        return loginTicketMapper.selectByTicket(ticket);
 //    }
 
+    /**
+     * 更新头像
+     * @param userId
+     * @param headerUrl
+     * @return
+     */
     public int updateHeader(int userId, String headerUrl) {
         return userMapper.updateHeader(userId, headerUrl);
     }
+
+    public Map<String, Object> changPassword(int userId, String oldPassword, String newPassword){
+        Map<String, Object> map = new HashMap<>();
+
+        //空值处理
+        if (StringUtils.isBlank(oldPassword)) {
+            map.put("errorMsg","原密码不能为空!");
+            return map;
+        }
+        if (StringUtils.isBlank(newPassword)) {
+            map.put("errorMsg","原密码不能为空!");
+            return map;
+        }
+
+        User user = userMapper.selectById(userId);
+
+        //验证密码
+        oldPassword = CommunityUtil.md5(oldPassword + user.getSalt());
+        if (!user.getPassword().equals(oldPassword)) {
+            map.put("errorMsg","原密码不正确!");
+            return map;
+        }
+        newPassword = CommunityUtil.md5(newPassword + user.getSalt());
+        userMapper.updatePassword(userId, newPassword);
+
+        return map;
+    }
+
 }
