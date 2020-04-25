@@ -35,14 +35,7 @@
             text-decoration:none;
         }
     </style>
-    <script>
-        $(function(){
-            $("a.disableHref").click(function(event){
-                return false;
-//                event.preventDefault();
-            });
-        });
-    </script>
+
 </head>
 <body>
 
@@ -87,6 +80,18 @@
         </tr>
 
         <tr>
+            <td></td>
+            <td><button id="buttonChange" @click="showOrHide">{{show?"我不发布了":"我要发布"}}</button></td>
+            <td></td>
+        </tr>
+
+        <tr id="discussPost" style="display: none">
+            <td><input type="text" v-model="post.title" placeholder="帖子标题"></td>
+            <td><input type="text" v-model="post.content" placeholder="帖子内容"></td>
+            <td><button @click="addPost">提交</button></td>
+        </tr>
+
+        <tr>
             <td>用户名</td>
             <td>帖子标题</td>
             <td>帖子内容</td>
@@ -94,7 +99,7 @@
 
         <tr v-for="post in posts ">
             <td>{{post.user.username}}</td>
-            <td>{{post.title}}</td>
+            <td><a :href="contextPath+'discuss/postDetail?id='+post.id">{{post.title}}</a></td>
             <td>{{post.content}}</td>
         </tr>
     </table>
@@ -104,9 +109,11 @@
     var data4Vue = {
         contextPath:'http://localhost:8080/toolmantalk/',
         posts: [],
+        post:{title:'',content:''},
         pagination:{},
         user:[],
-        flag:''
+        flag:'',
+        show:false
     };
 
     //ViewModel
@@ -119,11 +126,22 @@
         },
         methods: {
             list:function(start) {
-                var url = this.contextPath+"discussposts?start="+start;
+                var url = this.contextPath+"discuss/discussposts?start="+start;
                 axios.get(url).then(function (response) {
                     vue.pagination = response.data;
                     vue.posts = response.data.list;
                 });
+            },
+            addPost:function () {
+                var url = this.contextPath + "discuss/addPost";
+                axios.post(url,this.post).then(function (response) {
+                    var result = response.data;
+                    if (result.code == 0) {
+                        $("#discussPost").hide();
+                        window.location.reload();
+                    }
+                });
+                this.list(1);
             },
             getUser:function () {
                 var url = this.contextPath+"getUser";
@@ -155,18 +173,23 @@
                     vue.list(start);
             },
             logout:function () {
-                var url = "logout";
+                var url = this.contextPath + "logout";
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     //如果注销成功 返回登录页面
                     if (result.code==0){
-                        location.href="loginPage";
+                        location.href="http://localhost:8080/toolmantalk/loginPage";
                     }
                 });
+            },
+            showOrHide:function () {
+                vue.show = !vue.show;
+                $("#discussPost").toggle();
             }
         }
     });
 
 </script>
+
 </body>
 </html>

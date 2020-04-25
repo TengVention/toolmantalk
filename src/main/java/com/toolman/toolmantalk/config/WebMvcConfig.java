@@ -81,7 +81,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
         InterceptorRegistration interceptor = registry.addInterceptor(getSecurityInterceptor());
         ArrayList<String> list = new ArrayList<>();
         list.add("/js/**");
-        list.add("/listPost");
+        list.add("/discuss/listPost");
+        list.add("/discuss/postDetail");
         list.add("/static/**");
         list.add("/loginPage");
         list.add("/register");

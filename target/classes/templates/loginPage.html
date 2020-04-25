@@ -67,7 +67,7 @@
                         axios.post(url,this.user).then(function (response) {
                             var result = response.data;
                             if (result.code == 0) {
-                                location.href="listPost";
+                                location.href="http://localhost:8080/toolmantalk/discuss/listPost";
                             }
                             else {
                                 $("span.errorMessage").html(result.errormessage);

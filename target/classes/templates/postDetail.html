@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/toolmantalk/static/js/jquery.min.js"></script>
+    <script src="/toolmantalk/static/js/vue.min.js"></script>
+    <script src="/toolmantalk/static/js/axios.min.js"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:400px;
+            padding:20px;
+
+        }
+
+        div#pagination{
+            text-align: center;
+            line-height: 100px;
+        }
+        div#pagination a{
+            text-decoration:none;
+        }
+
+        .disableHref{
+            cursor:default;
+            color:#E5E0E0;
+            text-decoration:none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("a.disableHref").click(function(event){
+                return false;
+//                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="app">
+
+    <div v-if="user.username!=null">
+        <div>
+            你好！  <span style="background-color:yellow;">{{user.username}}</span>
+        </div>
+        <div>
+            头像：<span style="background-color:skyblue">{{user.headerUrl}}</span>
+            <img style="height: 50px;width: 50px;" :src="user.headerUrl" alt="">
+        </div>
+        <div>
+            注销：<a href="#" @click="logout">点这</a>
+        </div>
+    </div>
+    <div v-if="flag=='false'">
+        <a href="/toolmantalk/loginPage">登录</a>
+        <a href="/toolmantalk/register">注册</a>
+    </div>
+
+    <table class="postDetail">
+        <tr>
+            <td colspan="4" style="text-align: center">帖子详情页面</td>
+        </tr>
+        <tr>
+            <td><img :src="postDetail.user.headerUrl" style="width: 40px;height: 40px;" alt=""></td>
+            <td>{{postDetail.user.username}}</td>
+            <td>{{postDetail.post.title}}</td>
+            <td>{{postDetail.post.content}}</td>
+            <td>{{postDetail.post.createTime}}</td>
+            <td>一共<span>{{postDetail.post.commentCount}}</span>条评论</td>
+        </tr>
+
+        <tr>
+            <td colspan="6" style="text-align: center">评论区</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<script type="text/javascript">
+
+    var data4Vue = {
+        //全局路径
+        contextPath:'http://localhost:8080/toolmantalk/',
+        logoutUri:'logout',//注销
+        getUserUri:'getUser',//获取登录user
+        user:[],
+        postDetail:{},
+        flag:''
+    };
+
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data4Vue,
+        mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
+            this.getUser();
+            this.getPostDetail();
+        },
+        methods: {
+            getPostDetail:function () {
+                //http://localhost:8080/toolmantalk/discuss/discussposts/275
+                var id = getUrlParms("id");
+                var url = this.contextPath + "discuss/discussposts/" + id;
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    vue.postDetail = result.data;
+                });
+            },
+            getUser:function () {
+                var url = this.contextPath + this.getUserUri;
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    if (result.code == 0) {
+                        vue.user = result.data;
+                    }else {
+                        vue.flag = result.flag;
+                    }
+                });
+            },
+            logout:function () {
+                var url = this.contextPath + this.logoutUri;
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    //如果注销成功 返回登录页面
+                    if (result.code==0){
+                        location.href="http://localhost:8080/toolmantalk/loginPage";
+                    }
+                });
+            }
+        }
+    });
+
+    //获取地址栏参数的函数
+    function getUrlParms(para){
+        var search=location.search; //页面URL的查询部分字符串
+        var arrPara=new Array(); //参数数组。数组单项为包含参数名和参数值的字符串，如“para=value”
+        var arrVal=new Array(); //参数值数组。用于存储查找到的参数值
+
+        if(search!=""){
+            var index=0;
+            search=search.substr(1); //去除开头的“?”
+            arrPara=search.split("&");
+
+            for(i in arrPara){
+                var paraPre=para+"="; //参数前缀。即参数名+“=”，如“para=”
+                if(arrPara[i].indexOf(paraPre)==0&& paraPre.length<arrPara[i].length){
+                    arrVal[index]=decodeURI(arrPara[i].substr(paraPre.length)); //顺带URI解码避免出现乱码
+                    index++;
+                }
+            }
+        }
+
+        if(arrVal.length==1){
+            return arrVal[0];
+        }else if(arrVal.length==0){
+            return null;
+        }else{
+            return arrVal;
+        }
+    }
+
+</script>
+</body>
+</html>
