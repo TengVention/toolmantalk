@@ -144,28 +144,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
                     }
 
                     String username = claims.getSubject();
-                    User user = userService.findUserByName(username);
+                    User user = userService.findUserInfoByName(username);
                     hostHolder.setUser(user);
                 }
 
-//                if (request.getHeader(CommunityConstant.AUTHORIZATION)==null){
-//                    response.setStatus(401);
-//                    response.sendError(401, "登录失效,请重新登录");
-//                    return false;
-//                }else {
-//                    String authorization = request.getHeader(CommunityConstant.AUTHORIZATION);
-//                    String token = authorization.replace("toolman:","");
-//                    Claims claims = jwtUtils.parseJwt(token);
-//                    if (claims == null){
-//                        response.setStatus(401);
-//                        response.sendError(401, "登录失效,请重新登录");
-//                        return false;
-//                    }
-//
-//                    String username = claims.getSubject();
-//                    User user = userService.findUserByName(username);
-//                    hostHolder.setUser(user);
-//                }
             }
             return true;
         }

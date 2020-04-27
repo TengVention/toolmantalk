@@ -6,6 +6,10 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
 
+    //通过id查找用户的显示信息（用于用户信息显示）
+    User selectUserInfoById(int id);
+    //通过name查找用户的显示信息（用于用户信息显示）
+    User selectUserInfoByName(String username);
     //通过id查找用户
     User selectById(int id);
     //通过用户名查找用户

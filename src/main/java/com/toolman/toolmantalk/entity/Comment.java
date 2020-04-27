@@ -1,7 +1,12 @@
 package com.toolman.toolmantalk.entity;
 
 import java.util.Date;
+import java.util.List;
 
+/**
+ *  评论实体类
+ *  status 0-正常
+ */
 public class Comment {
 
     private int id;
@@ -12,6 +17,46 @@ public class Comment {
     private String content;
     private int status;
     private Date createTime;
+
+    private int replyCount;
+
+    private User user;
+
+    private User targetUser;
+
+    public int getReplyCount() {
+        return replyCount;
+    }
+
+    public void setReplyCount(int replyCount) {
+        this.replyCount = replyCount;
+    }
+
+    public User getTargetUser() {
+        return targetUser;
+    }
+
+    public void setTargetUser(User targetUser) {
+        this.targetUser = targetUser;
+    }
+
+    private List<Comment> replyComment;
+
+    public List<Comment> getReplyComment() {
+        return replyComment;
+    }
+
+    public void setReplyComment(List<Comment> replyComment) {
+        this.replyComment = replyComment;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public int getId() {
         return id;

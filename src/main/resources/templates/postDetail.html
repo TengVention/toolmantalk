@@ -5,35 +5,175 @@
     <script src="/toolmantalk/static/js/jquery.min.js"></script>
     <script src="/toolmantalk/static/js/vue.min.js"></script>
     <script src="/toolmantalk/static/js/axios.min.js"></script>
+    <link rel="stylesheet" href="/toolmantalk/static/css/bootstrap.min.css">
     <style type="text/css">
-        td{
-            border:1px solid gray;
+        .content {
+            font-size: 16px;
+            line-height: 2em;
         }
 
-        table{
-            border-collapse:collapse;
+        .replyform textarea {
+            width: 100%;
+            height: 200px;
         }
 
-        div#app{
-            margin:20px auto;
-            width:400px;
-            padding:20px;
-
+        .floor {
+            background: #dcdadc;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 14px;
         }
 
-        div#pagination{
+        .input-size {
+            width: 100%;
+            height: 35px;
+        }
+        html {
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: arial, STHeiti, 'Microsoft YaHei', \5b8b\4f53;
+            font-size: 14px;
+            height: 100%;
+        }
+
+        .nk-container {
+            position: relative;
+            height: auto;
+            min-height: 100%;
+        }
+
+        .container {
+            width: 960px;
+            padding: 0;
+        }
+
+        header .navbar-brand {
+            background: url('http://static.nowcoder.com/images/res/logo/logo-v3.png') no-repeat;
+            background-size: 147px 42px;
+            width: 147px;
+            height: 42px;
+            margin: 5px 15px 5px 0;
+        }
+
+        header .navbar {
+            padding: 5px 0;
+            font-size: 16px;
+        }
+
+        header .badge {
+            position: absolute;
+            top: -3px;
+            left: 33px;
+        }
+
+        footer {
+            padding: 20px 0;
+            font-size: 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer .qrcode {
             text-align: center;
-            line-height: 100px;
-        }
-        div#pagination a{
-            text-decoration:none;
         }
 
-        .disableHref{
-            cursor:default;
-            color:#E5E0E0;
-            text-decoration:none;
+        footer .detail-info{
+            border-left: 1px solid #888;
         }
+
+        footer .company-info li {
+            padding-left: 16px;
+            margin: 4px 0;
+        }
+
+        .main {
+            padding: 20px 0;
+            padding-bottom: 200px;
+        }
+
+        .main .container {
+            background: #fff;
+            padding: 20px;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        u {
+            text-decoration: none;
+        }
+
+        b {
+            font-weight: normal;
+        }
+
+        a {
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        .font-size-12 {
+            font-size: 12px;
+        }
+        .font-size-14 {
+            font-size: 14px;
+        }
+        .font-size-16 {
+            font-size: 16px;
+        }
+        .font-size-18 {
+            font-size: 18px;
+        }
+        .font-size-20 {
+            font-size: 20px;
+        }
+        .font-size-22 {
+            font-size: 20px;
+        }
+        .font-size-24 {
+            font-size: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .rt-0 {
+            right: 0;
+            top: 0;
+        }
+
+        .square {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: #ff6547;
+            margin-bottom: 2px;
+            margin-right: 3px;
+        }
+
+        .bg-gray {
+            background: #eff0f2;
+        }
+
+        .user-header {
+            width: 50px;
+            height: 50px;
+        }
+
+        em {
+            font-style: normal;
+            color: red;
+        }
+
     </style>
     <script>
         $(function(){
@@ -48,41 +188,252 @@
 
 <div id="app">
 
-    <div v-if="user.username!=null">
-        <div>
-            你好！  <span style="background-color:yellow;">{{user.username}}</span>
-        </div>
-        <div>
-            头像：<span style="background-color:skyblue">{{user.headerUrl}}</span>
-            <img style="height: 50px;width: 50px;" :src="user.headerUrl" alt="">
-        </div>
-        <div>
-            注销：<a href="#" @click="logout">点这</a>
+    <div class="nk-container">
+        <!-- 头部 -->
+        <header class="bg-dark sticky-top">
+            <div class="container">
+                <!-- 导航 -->
+                <nav class="navbar navbar-expand-lg navbar-dark">
+                    <!-- logo -->
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- 功能 -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link" href="#">首页</a>
+                            </li>
+                            <li class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link position-relative" href="#">消息<span class="badge badge-danger">12</span></a>
+                            </li>
+                            <li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link" href="#">注册</a>
+                            </li>
+                            <li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link" href="#">登录</a>
+                            </li>
+                            <li class="nav-item ml-3 btn-group-vertical dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-center" href="#">个人主页</a>
+                                    <a class="dropdown-item text-center" href="#">账号设置</a>
+                                    <a class="dropdown-item text-center" href="#">退出登录</a>
+                                    <div class="dropdown-divider"></div>
+                                    <span class="dropdown-item text-center text-secondary">{{user.username}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- 搜索 -->
+                        <form class="form-inline my-2 my-lg-0" action="#">
+                            <input class="form-control mr-sm-2" type="search" aria-label="Search" />
+                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">搜索</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- 内容 -->
+        <div class="main">
+            <!-- 帖子详情 -->
+            <div class="container">
+                <!-- 标题 -->
+                <h6 class="mb-4">
+                    <img src="http://static.nowcoder.com/images/img/icons/ico-discuss.png"/>
+                    <span>{{postDetail.title}}</span>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-danger btn-sm">置顶</button>
+                        <button type="button" class="btn btn-danger btn-sm">加精</button>
+                        <button type="button" class="btn btn-danger btn-sm">删除</button>
+                    </div>
+                </h6>
+                <!-- 作者 -->
+                <div class="media pb-3 border-bottom">
+                    <a href="profile.html">
+                        <img :src="postUser.headerUrl" class="align-self-start mr-4 rounded-circle user-header" >
+                    </a>
+                    <div class="media-body">
+                        <div class="mt-0 text-warning">{{postUser.username}}</div>
+                        <div class="text-muted mt-3">
+                            发布于 <b>{{postDetail.createTime}}</b>
+                            <ul class="d-inline float-right">
+                                <li class="d-inline ml-2"><a href="#" class="text-primary">赞 11</a></li>
+                                <li class="d-inline ml-2">|</li>
+                                <li class="d-inline ml-2">
+                                    <a href="#replyform" class="text-primary">回帖 <span>{{postDetail.commentCount}}</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 正文 -->
+                <div class="mt-4 mb-3 content">{{postDetail.content}}</div>
+            </div>
+            <!-- 回帖 -->
+            <div v-if="postDetail.commentCount!=0" class="container mt-3">
+                <!-- 回帖数量 -->
+                <div class="row">
+                    <div class="col-8">
+                        <h6><b class="square"></b> <i>{{postDetail.commentCount}}</i>条回帖</h6>
+                    </div>
+                    <div class="col-4 text-right">
+                        <a href="#replyform" class="btn btn-primary btn-sm">&nbsp;&nbsp;回&nbsp;&nbsp;帖&nbsp;&nbsp;</a>
+                    </div>
+                </div>
+                <!-- 回帖列表 -->
+                <ul class="list-unstyled mt-4">
+                    <!-- 第1条回帖 -->
+                    <li v-for="(comment,index) in comments" class="media pb-3 pt-3 mb-3 border-bottom">
+                        <a href="profile.html">
+                            <img :src="comment.user.headerUrl" class="align-self-start mr-4 rounded-circle user-header" alt="用户头像" >
+                        </a>
+                        <div class="media-body">
+                            <div class="mt-0">
+                                <span class="font-size-12 text-success">{{comment.user.username}}</span>
+                                <span class="badge badge-secondary float-right floor"><i>{{ pagination.startRow + index}}</i>#</span>
+                            </div>
+                            <div class="mt-2">{{comment.content}}</div>
+                            <div class="mt-4 text-muted font-size-12">
+                                <span>发布于 <b>{{comment.createTime}}</b></span>
+                                <ul class="d-inline float-right">
+                                    <li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+                                    <li class="d-inline ml-2">|</li>
+                                    <li class="d-inline ml-2"><a href="#" class="text-primary">回复(<span>{{comment.replyCount}}</span>)</a></li>
+                                </ul>
+                            </div>
+                            <!-- 回复列表 -->
+                            <ul class="list-unstyled mt-4 bg-gray p-3 font-size-12 text-muted">
+                                <!-- 第1条回复 -->
+                                <li v-for="(replyComment,index) in comment.replyComment" class="pb-3 pt-3 mb-3 border-bottom">
+                                    <div>
+                                        <span v-if="replyComment.targetUser==null">
+                                            <b class="text-info">{{replyComment.user.username}}</b>:&nbsp;&nbsp;
+                                        </span>
+                                        <span v-if="replyComment.targetUser!=null">
+											<i class="text-info" >{{replyComment.user.username}}</i> 回复
+											<b class="text-info" >{{replyComment.targetUser.username}}</b>:&nbsp;&nbsp;
+										</span>
+                                        <span>{{replyComment.content}}</span>
+                                    </div>
+                                    <div class="mt-3">
+                                        <span>{{replyComment.createTime}}</span>
+                                        <ul class="d-inline float-right">
+                                            <li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+                                            <li class="d-inline ml-2">|</li>
+                                            <li class="d-inline ml-2"><a :href="'#huifu-'+ index"  data-toggle="collapse" class="text-primary">回复</a></li>
+                                        </ul>
+                                        <div :id="'huifu-'+ index" class="mt-4 collapse">
+                                            <div>
+                                                <input type="text" class="input-size" :placeholder="'回复'+ replyComment.user.username"/>
+                                            </div>
+                                            <div class="text-right mt-2">
+                                                <button type="button" class="btn btn-primary btn-sm" onclick="#">&nbsp;&nbsp;回&nbsp;&nbsp;复&nbsp;&nbsp;</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- 回复输入框 -->
+                                <li class="pb-3 pt-3">
+                                    <div>
+                                        <input type="text" class="input-size" placeholder="请输入你的观点"/>
+                                    </div>
+                                    <div class="text-right mt-2">
+                                        <button type="button" class="btn btn-primary btn-sm" onclick="#">&nbsp;&nbsp;回&nbsp;&nbsp;复&nbsp;&nbsp;</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 分页 -->
+                <nav class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" :class="{ disabled: pagination.pageNum==1 }">
+                            <a class="page-link" href="#" @click="jump('first')">首页</a>
+                        </li>
+                        <li class="page-item" :class="{ disabled: !pagination.hasPreviousPage }">
+                            <a class="page-link" @click="jump('pre')" href="#">上一页</a>
+                        </li>
+                        <li class="page-item" :class="{ disabled: pagination.pageNum==i}" v-for="i in pagination.navigatepageNums">
+                            <a class="page-link" href="#" @click="jumpByNumber(i)">{{i}}</a>
+                        </li>
+                        <li class="page-item" :class="{ disabled: !pagination.hasNextPage }">
+                            <a class="page-link" @click="jump('next')" href="#">下一页</a>
+                        </li>
+                        <li class="page-item" :class="{ disabled: pagination.pageNum==pagination.pages }">
+                            <a class="page-link" @click="jump('last')" href="#">末页</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 回帖输入 -->
+            <div class="container mt-3">
+                <form class="replyform">
+                    <p class="mt-3">
+                        <a name="replyform"></a>
+                        <textarea placeholder="在这里畅所欲言你的看法吧!"></textarea>
+                    </p>
+                    <p class="text-right">
+                        <button type="submit" class="btn btn-primary btn-sm">&nbsp;&nbsp;回&nbsp;&nbsp;帖&nbsp;&nbsp;</button>
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
-    <div v-if="flag=='false'">
-        <a href="/toolmantalk/loginPage">登录</a>
-        <a href="/toolmantalk/register">注册</a>
-    </div>
 
-    <table class="postDetail">
-        <tr>
-            <td colspan="6" style="text-align: center">帖子详情页面</td>
-        </tr>
-        <tr>
-            <td><img :src="postDetail.user.headerUrl" style="width: 40px;height: 40px;" alt=""></td>
-            <td>{{postDetail.user.username}}</td>
-            <td>{{postDetail.post.title}}</td>
-            <td>{{postDetail.post.content}}</td>
-            <td>{{postDetail.post.createTime}}</td>
-            <td>一共<span>{{postDetail.post.commentCount}}</span>条评论</td>
-        </tr>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="/toolmantalk/static/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
-        <tr>
-            <td colspan="6" style="text-align: center">评论区</td>
-        </tr>
+<!--    <table class="postDetail">-->
+<!--        <tr>-->
+<!--            <td colspan="6" style="text-align: center">帖子详情页面</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><img :src="postUser.headerUrl" style="width: 40px;height: 40px;" alt=""></td>-->
+<!--            <td>{{postUser.username}}</td>-->
+<!--            <td>{{postDetail.title}}</td>-->
+<!--            <td>{{postDetail.content}}</td>-->
+<!--            <td>{{postDetail.createTime}}</td>-->
+<!--            <td>一共<span>{{postDetail.commentCount}}</span>条评论</td>-->
+<!--        </tr>-->
 
-    </table>
+<!--        <tr>-->
+<!--            <td colspan="6" style="text-align: center">评论区</td>-->
+
+<!--        </tr>-->
+
+<!--        <tr v-for="comment in comments">-->
+<!--            <td>{{comment.user.username}}</td>-->
+<!--            <td>{{comment.content}}</td>-->
+<!--            <td>-->
+<!--                <div v-for="replyComment in comments.replyComment">-->
+<!--                    <div>{{replyComment.user.username}}</div>-->
+<!--                    <div>{{replyComment.content}}</div>-->
+<!--                </div>-->
+<!--            </td>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <td colspan="6">-->
+<!--                <div id="pagination" >-->
+<!--                    <a :class="{ disableHref: pagination.pageNum==1 }" href="#nowhere" @click="jump('first')">[first]</a>-->
+<!--                    <a :class="{ disableHref: !pagination.hasPreviousPage }" href="#nowhere" @click="jump('pre')">[pre]</a>-->
+
+<!--                    <a href="#nowhere" :class="{disableHref:pagination.pageNum==i}"  v-for="i in pagination.navigatepageNums" @click="jumpByNumber(i)" >-->
+<!--                        {{i}}-->
+<!--                    </a>-->
+
+<!--                    <a :class="{ disableHref: !pagination.hasNextPage }" href="#nowhere" @click="jump('next')">[next]</a>-->
+<!--                    <a :class="{ disableHref: pagination.pageNum==pagination.pages }" href="#nowhere" @click="jump('last')">[last]</a>-->
+<!--                </div>-->
+<!--            </td>-->
+<!--        </tr>-->
+
+<!--    </table>-->
 
 </div>
 
@@ -94,7 +445,11 @@
         logoutUri:'logout',//注销
         getUserUri:'getUser',//获取登录user
         user:[],
+        comments:[],
+        replyComments:[],
+        postUser:[],
         postDetail:{},
+        pagination:{},
         flag:''
     };
 
@@ -105,16 +460,20 @@
         data: data4Vue,
         mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
             this.getUser();
-            this.getPostDetail();
+            this.getPostDetail(1);
         },
         methods: {
-            getPostDetail:function () {
+            getPostDetail:function (start) {
                 //http://localhost:8080/toolmantalk/discuss/discussposts/275
                 var id = getUrlParms("id");
-                var url = this.contextPath + "discuss/discussposts/" + id;
+                var url = this.contextPath + "discuss/discussposts/"+id+"?start="+start;
                 axios.get(url).then(function (response) {
                     var result = response.data;
-                    vue.postDetail = result.data;
+                    vue.postUser = result.user;
+                    vue.pagination = result.page;
+                    vue.postDetail = result.post;
+                    vue.comments = vue.pagination.list;
+                    vue.replyComments = vue.comments.replyComment;
                 });
             },
             getUser:function () {
@@ -130,6 +489,34 @@
             },
             logout:function () {
                 var url = this.contextPath + this.logoutUri;
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    //如果注销成功 返回登录页面
+                    if (result.code==0){
+                        location.href="http://localhost:8080/toolmantalk/loginPage";
+                    }
+                });
+            },
+            jump: function(page){
+                if('first'== page && 1!=vue.pagination.pageNum)
+                    vue.getPostDetail(1);
+
+                else if('pre'== page && vue.pagination.hasPreviousPage )
+                    vue.getPostDetail(vue.pagination.prePage);
+
+                else if('next'== page && vue.pagination.hasNextPage)
+                    vue.getPostDetail(vue.pagination.nextPage);
+
+                else if('last'== page && vue.pagination.pageNum!=vue.pagination.pages)
+                    vue.getPostDetail(vue.pagination.pages);
+
+            },
+            jumpByNumber: function(start){
+                if(start!=vue.pagination.pageNum)
+                    vue.getPostDetail(start);
+            },
+            logout:function () {
+                var url = this.contextPath + "logout";
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     //如果注销成功 返回登录页面

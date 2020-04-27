@@ -12,6 +12,23 @@
         id, username, password, salt, email, phone, type, status, activation_code, header_url, create_time
     </sql>
 
+    <sql id="userInfoSelectFields">
+        id, username, header_url, create_time
+    </sql>
+
+    <!-- 查找用于显示用户信息的数据 -->
+    <select id="selectUserInfoById" resultType="User">
+        select <include refid="userInfoSelectFields"></include>
+        from user
+        where id = #{id}
+    </select>
+    <!-- 查找用于显示用户信息的数据 -->
+    <select id="selectUserInfoByName" resultType="User">
+        select <include refid="userInfoSelectFields"></include>
+        from user
+        where username = #{username}
+    </select>
+
     <select id="selectById" resultType="User">
         select <include refid="selectFields"></include>
         from user

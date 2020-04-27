@@ -33,6 +33,16 @@ public class UserService {
 
     static final String verify_code = "user:phone_code";
 
+    /*通过用户名查找用于显示用户的信息*/
+    public User findUserInfoByName(String username){
+        return userMapper.selectUserInfoByName(username);
+    }
+
+    /*通过id查找用于显示用户的信息*/
+    public User findUserInfoById(int id){
+        return userMapper.selectUserInfoById(id);
+    }
+
     /*通过id查找user*/
     public User findUserById(int id){
         return userMapper.selectById(id);
