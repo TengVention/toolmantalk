@@ -105,11 +105,9 @@ public class LoginController implements CommunityConstant {
     @CrossOrigin
     public Object register(@RequestBody User user){
         Map<String,Object> map = userService.register(user);
-        User registerUser = userService.findUserByName(user.getUsername());
-        System.out.println(registerUser.toString());
+
         if (map == null || map.isEmpty()){
-            map.put("userId",registerUser.getId());
-            return Result.success(map);
+            return Result.success();
         }
         return map;
     }

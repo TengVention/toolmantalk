@@ -1,0 +1,30 @@
+2020-05-02 10:46:50,819 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-02 10:46:56,668 WARN [main] c.t.t.LoggerTests [LoggerTests.java:22] warn log
+2020-05-02 10:47:33,968 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-02 10:47:38,723 WARN [main] c.t.t.LoggerTests [LoggerTests.java:22] warn log
+2020-05-02 10:51:34,747 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-02 10:51:39,626 WARN [main] c.t.t.LoggerTests [LoggerTests.java:22] warn log

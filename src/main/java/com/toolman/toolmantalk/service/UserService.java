@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.HtmlUtils;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -126,7 +127,7 @@ public class UserService {
         }
 
         //验证账号
-        User u = userMapper.selectByName(user.getUsername());
+        User u = userMapper.selectByName(HtmlUtils.htmlEscape(user.getUsername()));
         if (u != null){
             map.put("message", "该账号已存在!");
             return map;
@@ -146,6 +147,7 @@ public class UserService {
 //        }
 
         //注册用户
+        user.setUsername(HtmlUtils.htmlEscape(user.getUsername()));
         user.setSalt(CommunityUtil.generateUUID().substring(0,5));
         user.setPassword(CommunityUtil.md5(user.getPassword() + user.getSalt()));
         user.setType(0);
@@ -167,31 +169,36 @@ public class UserService {
 
         // 空值处理
         if (StringUtils.isBlank(username)) {
-            map.put("errormessage", "账号不能为空!");
+            map.put("usernameMsg", "账号不能为空!");
+            map.put("hasUsernameError",true);
             return map;
         }
         if (StringUtils.isBlank(password)) {
-            map.put("errormessage", "密码不能为空!");
+            map.put("passwordMsg", "密码不能为空!");
+            map.put("hasPasswordError",true);
             return map;
         }
 
         //验证账号
         User user = userMapper.selectByName(username);
         if (user == null){
-            map.put("errormessage","该账号不存在!");
+            map.put("usernameMsg","该账号不存在!");
+            map.put("hasUsernameError",true);
             return map;
         }
 
         //验证账号状态
         if (user.getStatus()==0){
-            map.put("errormessage", "该账号未激活!");
+            map.put("usernameMsg", "该账号未激活!");
+            map.put("hasUsernameError",true);
             return map;
         }
 
         //验证密码
         password = CommunityUtil.md5(password + user.getSalt());
         if (!user.getPassword().equals(password)){
-            map.put("errormessage", "密码不正确!");
+            map.put("passwordMsg", "密码不正确!");
+            map.put("hasPasswordError",true);
             return map;
         }
         //登录成功

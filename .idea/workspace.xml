@@ -2,22 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="796a57bf-de8d-491b-a2fd-2602f4c9cc47" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/error.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/DiscussPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/DiscussPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/CommentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/AliyunSmsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/AliyunSmsUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/comment-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/comment-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sensitive-words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sensitive-words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/postDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/postDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/config/WebMvcConfig$SecurityInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/config/WebMvcConfig$SecurityInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/config/WebMvcConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/DiscussPostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/DiscussPostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/entity/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/service/CommentService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CommunityConstant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CommunityConstant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/user-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/user-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/AliyunSmsUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/AliyunSmsUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CommunityUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/CommunityUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/toolman/toolmantalk/util/Result.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/comment-mapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/comment-mapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sensitive-words.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sensitive-words.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/postDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/postDetail.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -34,47 +47,76 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/src/main/resources/templates/loginPage.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="426">
+                    <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="toolmantalk" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/letter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-975">
+              <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="10" selection-end-column="69" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#4092#4099#1" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="322" column="4" selection-start-line="322" selection-start-column="4" selection-end-line="323" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/ForePageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/DiscussPostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="106" column="101" lean-forward="true" selection-start-line="106" selection-start-column="101" selection-end-line="106" selection-end-column="101" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Comment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#476#477#0" expanded="true" />
-                <element signature="e#509#510#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#521#522#0" expanded="true" />
-                <element signature="e#565#566#0" expanded="true" />
-                <element signature="e#460#461#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+            <state relative-caret-position="347">
+              <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="150" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,57 +125,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/postDetail.html">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-69">
-              <caret line="328" column="89" lean-forward="true" selection-start-line="328" selection-start-column="89" selection-end-line="328" selection-end-column="89" />
+            <state relative-caret-position="611">
+              <caret line="210" column="63" selection-start-line="210" selection-start-column="63" selection-end-line="210" selection-end-column="63" />
               <folding>
-                <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#9677#9683#0" expanded="true" />
-                <element signature="e#9683#9689#0" expanded="true" />
-                <element signature="e#9690#9696#0" expanded="true" />
-                <element signature="e#9696#9702#0" expanded="true" />
-                <element signature="e#9703#9709#0" expanded="true" />
-                <element signature="e#9709#9715#0" expanded="true" />
-                <element signature="e#11568#11574#0" expanded="true" />
-                <element signature="e#11574#11580#0" expanded="true" />
-                <element signature="e#11538#11544#0" expanded="true" />
-                <element signature="e#11544#11550#0" expanded="true" />
-                <element signature="e#12777#12783#0" expanded="true" />
-                <element signature="e#12783#12789#0" expanded="true" />
-                <element signature="e#12790#12796#0" expanded="true" />
-                <element signature="e#12796#12802#0" expanded="true" />
-                <element signature="e#12803#12809#0" expanded="true" />
-                <element signature="e#12809#12815#0" expanded="true" />
-                <element signature="e#15155#15161#0" expanded="true" />
-                <element signature="e#15161#15167#0" expanded="true" />
-                <element signature="e#15168#15174#0" expanded="true" />
-                <element signature="e#15174#15180#0" expanded="true" />
-                <element signature="e#15181#15187#0" expanded="true" />
-                <element signature="e#15187#15193#0" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#18970#18976#0" expanded="true" />
-                <element signature="e#18976#18982#0" expanded="true" />
-                <element signature="e#18983#18989#0" expanded="true" />
-                <element signature="e#18989#18995#0" expanded="true" />
-                <element signature="e#18996#19002#0" expanded="true" />
-                <element signature="e#19002#19008#0" expanded="true" />
+                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/listPost.html">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="486">
-              <caret line="128" column="72" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="72" />
+              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#2;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="177" column="37" selection-start-line="177" selection-start-column="21" selection-end-line="177" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,8 +166,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="HTML File" />
         <option value="Interface" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -159,6 +181,14 @@
       <find>prototype</find>
       <find>prototype.</find>
       <find>comment.user</find>
+      <find>comment</find>
+      <find>:id</find>
+      <find>cindex</find>
+      <find>moment</find>
+      <find>formDate</find>
+      <find>total</find>
+      <find>text</find>
+      <find>hintBody</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,59 +198,65 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/LoginTicket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/LoginTicketMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CookieUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/HostHolder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/interceptor/loginTicketInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/MailTests.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/interceptor/LoginFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/UserVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/jwtutil/RsaUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/jwtutil/ObjectUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/jwtutil/JwtUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/JwtTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/annotation/ExcludeInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/JwtUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/axios.min.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/vue.min.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/register.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/interceptor/LoginTicketInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/activation.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/axios.min.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/Result.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/demo.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/usersetting.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/SensitiveFilter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/sensitive-words.txt" />
         <option value="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/SensitiveTests.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/discusspost-mapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/DiscussPostMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/DiscussPostService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/loginPage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/listPost.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/CommentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/comment-mapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityConstant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/CommentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/DiscussPostController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/postDetail.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/moment.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/comment-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/CommentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/DiscussPostController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/sensitive-words.txt" />
+        <option value="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/MapperTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/MessageMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/message-mapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/global.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/letter.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/postDetail.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/letter.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/error/500.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/letter-detail.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/aspect/AlphAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/AliyunSmsUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/LoggerTests.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/aspect/ServiceLogAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/letter.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/advice/ExceptionAdvice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/Result.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/advice/NotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/error/404.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/ForePageController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fore/login.html" />
       </list>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -231,7 +267,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="910" />
+    <option name="x" value="907" />
+    <option name="y" value="3" />
     <option name="width" value="1005" />
     <option name="height" value="1044" />
   </component>
@@ -242,8 +279,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,34 +321,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
@@ -319,31 +329,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="toolmantalk" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="toolmantalk" type="b2602c69:ProjectViewProjectNode" />
@@ -361,6 +346,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -368,24 +354,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/fore" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\static\img" />
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\templates\error" />
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\templates" />
       <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\webapp\js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\templates\fore" />
       <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources" />
-      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\static" />
-      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\webapp\js" />
-      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\webapp" />
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\templates" />
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\static\img" />
+      <recent name="C:\Users\cwteng\Desktop\toolmantalk\src\main\resources\static\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -401,20 +391,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ToolManTalkApplication">
-    <configuration name="SensitiveFilter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.util.SensitiveFilter" />
-      <module name="toolmantalk" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.toolman.toolmantalk.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JwtTest.testParseToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoggerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="toolmantalk" />
       <extension name="coverage">
         <pattern>
@@ -423,29 +400,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.toolman.toolmantalk" />
-      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.JwtTest" />
-      <option name="METHOD_NAME" value="testParseToken" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SensitiveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="toolmantalk" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.toolman.toolmantalk.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.toolman.toolmantalk" />
-      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.SensitiveTests" />
+      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.LoggerTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SensitiveTests.testSensitiveFilter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoggerTests.testLogger" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="toolmantalk" />
       <extension name="coverage">
         <pattern>
@@ -454,8 +415,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.toolman.toolmantalk" />
-      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.SensitiveTests" />
-      <option name="METHOD_NAME" value="testSensitiveFilter" />
+      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.LoggerTests" />
+      <option name="METHOD_NAME" value="testLogger" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapperTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toolmantalk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toolman.toolmantalk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.toolman.toolmantalk" />
+      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.MapperTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapperTests.testSelectLetters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="toolmantalk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toolman.toolmantalk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.toolman.toolmantalk" />
+      <option name="MAIN_CLASS_NAME" value="com.toolman.toolmantalk.MapperTests" />
+      <option name="METHOD_NAME" value="testSelectLetters" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -477,10 +469,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ToolManTalkApplication" />
-        <item itemvalue="JUnit.SensitiveTests" />
-        <item itemvalue="Application.SensitiveFilter" />
-        <item itemvalue="JUnit.SensitiveTests.testSensitiveFilter" />
-        <item itemvalue="JUnit.JwtTest.testParseToken" />
+        <item itemvalue="JUnit.LoggerTests" />
+        <item itemvalue="JUnit.LoggerTests.testLogger" />
+        <item itemvalue="JUnit.MapperTests.testSelectLetters" />
+        <item itemvalue="JUnit.MapperTests" />
       </list>
     </recent_temporary>
   </component>
@@ -512,7 +504,19 @@
       <workItem from="1587693076052" duration="10812000" />
       <workItem from="1587786205217" duration="27521000" />
       <workItem from="1587867512782" duration="17342000" />
-      <workItem from="1587967044681" duration="12583000" />
+      <workItem from="1587967044681" duration="17251000" />
+      <workItem from="1588036182371" duration="16259000" />
+      <workItem from="1588141711000" duration="20256000" />
+      <workItem from="1588210824766" duration="2493000" />
+      <workItem from="1588215441256" duration="25299000" />
+      <workItem from="1588296830959" duration="5009000" />
+      <workItem from="1588301887000" duration="9915000" />
+      <workItem from="1588323294087" duration="8125000" />
+      <workItem from="1588385236651" duration="4787000" />
+      <workItem from="1588407295504" duration="3151000" />
+      <workItem from="1588468545407" duration="2223000" />
+      <workItem from="1588560525829" duration="12823000" />
+      <workItem from="1588641823066" duration="9919000" />
     </task>
     <task id="LOCAL-00001" summary="toolmantalk环境搭建">
       <created>1586946187474</created>
@@ -598,58 +602,65 @@
       <option name="project" value="LOCAL" />
       <updated>1587826644412</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="完成了帖子详情页面的帖子前端显示">
+      <created>1587980010985</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1587980010985</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JwtTest_testParseToken - 2020.04.21 at 15h 28m 53s.xml">
-      <configuration name="JwtTest.testParseToken" configurationId="JUnit" />
+    <history-entry file="MapperTests - 2020.04.29 at 17h 43m 06s.xml">
+      <configuration name="MapperTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests_testSensitiveFilter - 2020.04.25 at 14h 03m 47s.xml">
-      <configuration name="SensitiveTests.testSensitiveFilter" configurationId="JUnit" />
+    <history-entry file="MapperTests - 2020.04.29 at 17h 45m 20s.xml">
+      <configuration name="MapperTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests_testSensitiveFilter - 2020.04.25 at 14h 06m 22s.xml">
-      <configuration name="SensitiveTests.testSensitiveFilter" configurationId="JUnit" />
+    <history-entry file="MapperTests_testSelectLetters - 2020.04.29 at 17h 47m 37s.xml">
+      <configuration name="MapperTests.testSelectLetters" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests_testSensitiveFilter - 2020.04.25 at 14h 07m 49s.xml">
-      <configuration name="SensitiveTests.testSensitiveFilter" configurationId="JUnit" />
+    <history-entry file="MapperTests_testSelectLetters - 2020.04.29 at 17h 49m 56s.xml">
+      <configuration name="MapperTests.testSelectLetters" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests - 2020.04.25 at 14h 12m 01s.xml">
-      <configuration name="SensitiveTests" configurationId="JUnit" />
+    <history-entry file="LoggerTests_testLogger - 2020.05.02 at 10h 40m 57s.xml">
+      <configuration name="LoggerTests.testLogger" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests - 2020.04.25 at 14h 12m 16s.xml">
-      <configuration name="SensitiveTests" configurationId="JUnit" />
+    <history-entry file="LoggerTests - 2020.05.02 at 10h 42m 04s.xml">
+      <configuration name="LoggerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests - 2020.04.25 at 14h 13m 47s.xml">
-      <configuration name="SensitiveTests" configurationId="JUnit" />
+    <history-entry file="LoggerTests - 2020.05.02 at 10h 44m 03s.xml">
+      <configuration name="LoggerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests - 2020.04.25 at 14h 15m 51s.xml">
-      <configuration name="SensitiveTests" configurationId="JUnit" />
+    <history-entry file="LoggerTests - 2020.05.02 at 10h 46m 57s.xml">
+      <configuration name="LoggerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests - 2020.04.25 at 14h 16m 59s.xml">
-      <configuration name="SensitiveTests" configurationId="JUnit" />
+    <history-entry file="LoggerTests - 2020.05.02 at 10h 47m 39s.xml">
+      <configuration name="LoggerTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SensitiveTests - 2020.04.25 at 14h 21m 51s.xml">
-      <configuration name="SensitiveTests" configurationId="JUnit" />
+    <history-entry file="LoggerTests - 2020.05.02 at 10h 51m 40s.xml">
+      <configuration name="LoggerTests" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265865000" />
+    <option name="totallyTimeSpent" value="390792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="910" y="0" width="1005" height="1044" extended-state="0" />
+    <frame x="907" y="3" width="1005" height="1044" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25079367" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887133" weight="0.26349208" />
+      <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.26666668" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Favorites" order="4" sideWeight="0.5011287" side_tool="true" weight="0.26666668" />
       <window_info id="Learn" order="5" />
-      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Web" order="6" sideWeight="0.5011287" side_tool="true" weight="0.26666668" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895397" weight="0.43115124" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895397" weight="0.43792325" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39954853" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -672,16 +683,16 @@
       <window_info anchor="right" id="Bean Validation" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25079367" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.26349208" />
+      <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.26666668" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info id="Favorites" order="4" sideWeight="0.5011287" side_tool="true" weight="0.26666668" />
       <window_info id="Learn" order="5" />
-      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Web" order="6" sideWeight="0.5011287" side_tool="true" weight="0.26666668" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895397" weight="0.43115124" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295711" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895397" weight="0.43792325" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39954853" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -718,370 +729,62 @@
     <MESSAGE value="完成了用户设置页面的修改头像功能" />
     <MESSAGE value="完成了用户设置页面的修改密码功能" />
     <MESSAGE value="完成了帖子详情页面的帖子部分功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了帖子详情页面的帖子部分功能" />
+    <MESSAGE value="完成了帖子详情页面的帖子前端显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成了帖子详情页面的帖子前端显示" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/js/vue.min.js" />
-    <entry file="jar://G:/springboot/apache-maven-3.6.1/repository/org/springframework/spring-webmvc/5.1.7.RELEASE/spring-webmvc-5.1.7.RELEASE.jar!/org/springframework/web/servlet/config/annotation/EnableWebMvc.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/comment-mapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state relative-caret-position="57">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfiguration.java" />
-    <entry file="jar://G:/springboot/apache-maven-3.6.1/repository/org/springframework/spring-web/5.1.7.RELEASE/spring-web-5.1.7.RELEASE.jar!/org/springframework/web/method/support/HandlerMethodArgumentResolver.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/usersetting.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CookieUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/axios.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="48" selection-start-column="48" selection-end-column="48" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/vue.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/interceptor/LoginTicketInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="79" lean-forward="true" selection-start-column="79" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/axios.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="501" column="33" lean-forward="true" selection-start-line="501" selection-start-column="33" selection-end-line="501" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/activation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/demo.html" />
-    <entry file="jar://G:/Program Files/Java/jdk1.8.0_131/src.zip!/java/lang/StringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="219" column="24" lean-forward="true" selection-start-line="219" selection-start-column="24" selection-end-line="219" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/ToolManTalkApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-          <folding>
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/SensitiveFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3920#3921#0" expanded="true" />
-            <element signature="e#3963#3964#0" expanded="true" />
-            <element signature="e#4020#4021#0" expanded="true" />
-            <element signature="e#4069#4070#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#4195#4196#0" expanded="true" />
-            <element signature="e#4262#4263#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2226">
+          <caret line="151" column="45" lean-forward="true" selection-start-line="151" selection-start-column="20" selection-end-line="151" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/sensitive-words.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="1638" column="6" lean-forward="true" selection-start-line="1638" selection-start-column="6" selection-end-line="1638" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="98" column="35" lean-forward="true" selection-start-line="98" selection-start-column="35" selection-end-line="98" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/SensitiveTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="2" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/discusspost-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="e#415#416#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#681#682#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/DiscussPost.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="62" column="25" lean-forward="true" selection-start-line="59" selection-start-column="24" selection-end-line="62" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#table#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/loginPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="68" column="51" lean-forward="true" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/UserVo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/AliyunSmsUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/SmsProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#925#926#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Review.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/usersetting.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="157" column="32" lean-forward="true" selection-end-line="202" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/DiscussPostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/DiscussPostMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="785">
+          <caret line="1667" column="2" lean-forward="true" selection-start-line="1667" selection-start-column="2" selection-end-line="1667" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/CommentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="75">
+          <caret line="3" column="44" lean-forward="true" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/message-mapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="73" column="17" lean-forward="true" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/MessageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/comment-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="114" column="65" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://G:/springboot/apache-maven-3.6.1/repository/io/jsonwebtoken/jjwt/0.9.1/jjwt-0.9.1.jar!/io/jsonwebtoken/Claims.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/JwtUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/user-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/global.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+        <state relative-caret-position="172">
+          <caret line="5" column="88198" selection-start-line="5" selection-start-column="88198" selection-end-line="5" selection-end-column="88198" />
           <folding>
             <element signature="e#25768#26002#2" expanded="true" />
             <element signature="e#26806#26959#1" expanded="true" />
@@ -1101,19 +804,198 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3194">
-          <caret line="1458" column="41" selection-start-line="1458" selection-start-column="41" selection-end-line="1458" selection-end-column="41" />
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/letter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#284#291#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/CommentService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/letter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/CommunityUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+          <folding>
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1172#1173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/postDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1550">
+          <caret line="230" column="17" selection-start-line="185" selection-start-column="8" selection-end-line="230" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#h6#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#nav#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/config/WebMvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="88" column="30" selection-start-line="88" selection-start-column="30" selection-end-line="88" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/img/error.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#492#493#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/500.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="105" column="30" lean-forward="true" selection-start-line="105" selection-start-column="30" selection-end-line="105" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/aspect/AlphAspect.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/SmsProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/AliyunSmsUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="47" column="56" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/MapperTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="61" lean-forward="true" selection-start-line="13" selection-end-line="15" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/toolman/toolmantalk/LoggerTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="114" column="65" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/letter-detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7000">
+          <caret line="280" column="46" selection-start-line="280" selection-start-column="46" selection-end-line="280" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/aspect/ServiceLogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
           <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1121,11 +1003,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/CommentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/DiscussPostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#811#812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="36" column="15" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback-spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/DiscussPost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/MessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2478">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/util/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="36" column="55" lean-forward="true" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+          <folding>
+            <element signature="e#884#885#0" expanded="true" />
+            <element signature="e#946#947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/springboot/apache-maven-3.6.1/repository/org/springframework/boot/spring-boot/2.1.5.RELEASE/spring-boot-2.1.5.RELEASE.jar!/org/springframework/boot/web/servlet/error/ErrorController.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/listPost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="128" column="72" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="72" />
+        <state relative-caret-position="775">
+          <caret line="102" column="6" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
           <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1134,82 +1097,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/entity/Comment.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/advice/NotFoundException.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="375">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/advice/ExceptionAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#476#477#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#558#559#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#460#461#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/letter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-975">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="10" selection-end-column="69" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4092#4099#1" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/DiscussPostController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="106" column="101" lean-forward="true" selection-start-line="106" selection-start-column="101" selection-end-line="106" selection-end-column="101" />
+        <state relative-caret-position="347">
+          <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="150" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/ForePageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="322" column="4" selection-start-line="322" selection-start-column="4" selection-end-line="323" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/loginPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        <state relative-caret-position="403">
+          <caret line="177" column="37" selection-start-line="177" selection-start-column="21" selection-end-line="177" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/postDetail.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/toolman/toolmantalk/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="328" column="89" lean-forward="true" selection-start-line="328" selection-start-column="89" selection-end-line="328" selection-end-column="89" />
+        <state relative-caret-position="486">
+          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
           <folding>
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#nav#0;n#div#0;n#header#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9677#9683#0" expanded="true" />
-            <element signature="e#9683#9689#0" expanded="true" />
-            <element signature="e#9690#9696#0" expanded="true" />
-            <element signature="e#9696#9702#0" expanded="true" />
-            <element signature="e#9703#9709#0" expanded="true" />
-            <element signature="e#9709#9715#0" expanded="true" />
-            <element signature="e#11568#11574#0" expanded="true" />
-            <element signature="e#11574#11580#0" expanded="true" />
-            <element signature="e#11538#11544#0" expanded="true" />
-            <element signature="e#11544#11550#0" expanded="true" />
-            <element signature="e#12777#12783#0" expanded="true" />
-            <element signature="e#12783#12789#0" expanded="true" />
-            <element signature="e#12790#12796#0" expanded="true" />
-            <element signature="e#12796#12802#0" expanded="true" />
-            <element signature="e#12803#12809#0" expanded="true" />
-            <element signature="e#12809#12815#0" expanded="true" />
-            <element signature="e#15155#15161#0" expanded="true" />
-            <element signature="e#15161#15167#0" expanded="true" />
-            <element signature="e#15168#15174#0" expanded="true" />
-            <element signature="e#15174#15180#0" expanded="true" />
-            <element signature="e#15181#15187#0" expanded="true" />
-            <element signature="e#15187#15193#0" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#18970#18976#0" expanded="true" />
-            <element signature="e#18976#18982#0" expanded="true" />
-            <element signature="e#18983#18989#0" expanded="true" />
-            <element signature="e#18989#18995#0" expanded="true" />
-            <element signature="e#18996#19002#0" expanded="true" />
-            <element signature="e#19002#19008#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fore/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="210" column="63" selection-start-line="210" selection-start-column="63" selection-end-line="210" selection-end-column="63" />
+          <folding>
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,3 @@
+2020-05-02 10:46:56,669 ERROR [main] c.t.t.LoggerTests [LoggerTests.java:23] error log
+2020-05-02 10:47:38,723 ERROR [main] c.t.t.LoggerTests [LoggerTests.java:23] error log
+2020-05-02 10:51:39,626 ERROR [main] c.t.t.LoggerTests [LoggerTests.java:23] error log

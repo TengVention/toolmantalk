@@ -2,12 +2,14 @@ package com.toolman.toolmantalk.util;
 
 /**
  * 返回结果处理工具类
- *  成功  0  失败  1
+ *  成功-0  失败-1  页面不存在-404
  */
 public class Result {
 
     public static int SUCCESS_CODE = 0;
     public static int FAIL_CODE = 1;
+    public static int NOT_FOUND_CODE = 404;
+
 
     int code;
     String message;
@@ -30,6 +32,9 @@ public class Result {
     }
     public static Result fail(Object data) {
         return new Result(FAIL_CODE,"",data);
+    }
+    public static Result notFound(String message) {
+        return new Result(NOT_FOUND_CODE,message,null);
     }
 
     public int getCode() {

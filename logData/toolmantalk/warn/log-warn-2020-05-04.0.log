@@ -1,0 +1,57 @@
+2020-05-04 15:25:33,003 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/site/profile.html
+2020-05-04 16:08:45,340 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:09:35,984 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:09:37,826 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:09:45,034 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indeasjkfghkas
+2020-05-04 16:09:56,025 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indeasjkfghkas
+2020-05-04 16:21:20,212 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:22:03,162 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:22:32,692 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:23:08,556 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:23:12,341 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:23:12,935 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:23:14,540 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:23:15,182 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:26:15,379 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:26:15,420 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DefaultHandlerExceptionResolver.java:512] No handler found for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:26:15,420 WARN [http-nio-8080-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf]
+2020-05-04 16:27:26,842 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:27:26,842 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DefaultHandlerExceptionResolver.java:512] No handler found for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:27:26,843 WARN [http-nio-8080-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf]
+2020-05-04 16:29:21,680 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:29:21,681 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DefaultHandlerExceptionResolver.java:512] No handler found for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf
+2020-05-04 16:29:21,681 WARN [http-nio-8080-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /toolmantalk/discuss/asgfjhfasgjfagsjyhf]
+2020-05-04 16:29:29,651 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/
+2020-05-04 16:29:29,652 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DefaultHandlerExceptionResolver.java:512] No handler found for GET /toolmantalk/discuss/
+2020-05-04 16:29:29,653 WARN [http-nio-8080-exec-3] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.servlet.NoHandlerFoundException: No handler found for GET /toolmantalk/discuss/]
+2020-05-04 16:29:49,274 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/
+2020-05-04 16:40:10,417 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/
+2020-05-04 16:44:43,794 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 16:45:00,902 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indexfsasfa
+2020-05-04 17:15:00,528 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 17:15:01,751 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 17:15:02,227 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 17:15:32,114 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 17:16:05,677 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 17:16:09,554 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indexfsasfa
+2020-05-04 17:16:10,614 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indexfsasfa
+2020-05-04 17:24:35,569 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indexfsasfa
+2020-05-04 17:24:44,933 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 19:15:41,106 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/discuss/dsgsdg
+2020-05-04 19:16:13,178 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:18:02,117 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:18:03,051 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:18:03,901 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:25:46,919 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:25:48,640 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:25:49,482 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:25:50,352 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:25:51,237 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:26:26,184 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:27:23,434 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:27:31,441 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:28:26,541 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:29:54,079 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:29:56,986 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 19:29:57,983 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/loginPagegasdgagsd
+2020-05-04 20:03:30,730 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/indexasfasfasf

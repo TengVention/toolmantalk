@@ -106,7 +106,7 @@ public class DiscussPostController implements CommunityConstant {
                 //查找评论的所有回复
                 List<Comment> replyComments = commentService.findCommentsByEntity(ENTITY_TYPE_COMMENT, comment.getId());
                 //嵌套进数据中
-                comment.setReplyComment(replyComments);
+                comment.setReplyComments(replyComments);
                 //如果回复list不为空，遍历出来，并且嵌套每个回复的用户显示信息
                 if (replyComments!=null){
                     for (Comment replyComment : replyComments){

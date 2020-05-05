@@ -38,6 +38,9 @@ public class CommentService implements CommunityConstant {
         if (comment == null) {
             throw new IllegalArgumentException("参数不能为空!");
         }
+        if (comment.getContent()==null){
+            throw new IllegalArgumentException("文本内容不能为空");
+        }
 
         //添加评论
         comment.setContent(HtmlUtils.htmlEscape(comment.getContent()));

@@ -24,6 +24,8 @@ public class Comment {
 
     private User targetUser;
 
+    private List<Comment> replyComments;
+
     public int getReplyCount() {
         return replyCount;
     }
@@ -40,14 +42,13 @@ public class Comment {
         this.targetUser = targetUser;
     }
 
-    private List<Comment> replyComment;
 
-    public List<Comment> getReplyComment() {
-        return replyComment;
+    public List<Comment> getReplyComments() {
+        return replyComments;
     }
 
-    public void setReplyComment(List<Comment> replyComment) {
-        this.replyComment = replyComment;
+    public void setReplyComments(List<Comment> replyComments) {
+        this.replyComments = replyComments;
     }
 
     public User getUser() {

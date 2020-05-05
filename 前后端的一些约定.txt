@@ -1,0 +1,13 @@
+状态码: 0-正常（success） 1-失败（fail） 2=服务器异常（服务器有异常）
+
+实体类status：
+
+用户（user） status  0-未激活  1-激活
+	     type    0-普通用户  1-超级管理员  2-版主 
+
+帖子（post） status  0-正常  1-精华  2-拉黑
+	     type    0-普通  1-置顶
+
+评论（comment）  status 0-正常 ps：暂时只设了正常 日后还会有拉黑和置顶
+
+消息（message）  status 0-未读  1-已读  2-删除
