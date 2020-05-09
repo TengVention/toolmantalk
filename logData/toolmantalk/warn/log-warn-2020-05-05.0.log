@@ -1,0 +1,15 @@
+2020-05-05 10:38:41,958 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-05 10:38:41,973 WARN [http-nio-8080-exec-9] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/kaptcha
+2020-05-05 10:40:54,065 WARN [http-nio-8080-exec-9] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-05 10:40:54,076 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/kaptcha
+2020-05-05 10:40:58,931 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-05 10:40:58,932 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/kaptcha
+2020-05-05 10:40:58,989 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/kaptcha
+2020-05-05 10:41:01,316 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-05 15:34:52,257 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/undefinedindex
+2020-05-05 15:35:08,375 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/undefinedindex
+2020-05-05 15:35:11,051 WARN [http-nio-8080-exec-10] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/undefinedindex
+2020-05-05 15:37:32,025 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/undefinedindex
+2020-05-05 16:23:34,434 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/letter/message
+2020-05-05 16:23:44,859 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/letter/profile.html
+2020-05-05 18:31:08,484 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/letter/index

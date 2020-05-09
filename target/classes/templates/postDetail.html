@@ -192,31 +192,31 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <!-- 功能 -->
+                    <!--功能-->
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item ml-3 btn-group-vertical">
-                                <a class="nav-link" href="#">首页</a>
+                                <a class="nav-link" :href="contextPath+'index'">首页</a>
                             </li>
-                            <li class="nav-item ml-3 btn-group-vertical">
-                                <a class="nav-link position-relative" href="#">消息<span class="badge badge-danger">12</span></a>
+                            <li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
                             </li>
-                            <li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
-                                <a class="nav-link" href="#">注册</a>
+                            <li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link" :href="contextPath+'register'">注册</a>
                             </li>
-                            <li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
-                                <a class="nav-link" href="#">登录</a>
+                            <li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
+                                <a class="nav-link" :href="contextPath+'login'">登录</a>
                             </li>
-                            <li class="nav-item ml-3 btn-group-vertical dropdown">
+                            <li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item text-center" href="#">个人主页</a>
-                                    <a class="dropdown-item text-center" href="#">账号设置</a>
+                                    <a class="dropdown-item text-center" :href="contextPath+'userSetting'">账号设置</a>
                                     <a class="dropdown-item text-center" @click="logout" href="#">退出登录</a>
                                     <div class="dropdown-divider"></div>
-                                    <span class="dropdown-item text-center text-secondary" v-html="user.username">tengVention</span>
+                                    <span class="dropdown-item text-center text-secondary" v-html="user.username">teng</span>
                                 </div>
                             </li>
                         </ul>
@@ -237,7 +237,7 @@
                 <!-- 标题 -->
                 <h6 class="mb-4">
                     <img src="http://static.nowcoder.com/images/img/icons/ico-discuss.png"/>
-                    <span>{{postDetail.title}}</span>
+                    <span v-html="postDetail.title">啦啦啦标题</span>
                     <div class="float-right">
                         <button type="button" class="btn btn-danger btn-sm">置顶</button>
                         <button type="button" class="btn btn-danger btn-sm">加精</button>
@@ -254,7 +254,15 @@
                         <div class="text-muted mt-3">
                             发布于 <b v-text="formDate(postDetail.createTime)">2020-2-20 20:20:20</b>
                             <ul class="d-inline float-right">
-                                <li class="d-inline ml-2"><a href="#" class="text-primary">赞 11</a></li>
+                                <li class="d-inline ml-2">
+                                    <a href="javascript:void(0)" @click="like($event)" class="text-primary">
+                                        <b v-text="likeStatus==1?'已赞':'赞'">赞</b> <i v-text="postDetail.likeCount">11</i>
+                                    </a>
+                                    <!--entityId-->
+                                    <input type="hidden" :value="postDetail.id">
+                                    <!--entityType-->
+                                    <input type="hidden" value="1">
+                                </li>
                                 <li class="d-inline ml-2">|</li>
                                 <li class="d-inline ml-2">
                                     <a href="#replyform" class="text-primary">回帖 <span v-text="postDetail.commentCount">12</span></a>
@@ -293,9 +301,17 @@
                             <div class="mt-4 text-muted font-size-12">
                                 <span>发布于 <b v-text="formDate(comment.createTime)">2020-2-21 20:20:20</b></span>
                                 <ul class="d-inline float-right">
-                                    <li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+                                    <li class="d-inline ml-2">
+                                        <a @click="like($event)" href="javascript:void(0)" class="text-primary"><b v-text="comment.likeStatus==1?'已赞':'赞'">赞</b>(<i v-text="comment.likeCount">1</i>)</a>
+                                        <!--entityId-->
+                                        <input type="hidden" :value="comment.id">
+                                        <!--entityType-->
+                                        <input type="hidden" value="2">
+                                    </li>
                                     <li class="d-inline ml-2">|</li>
-                                    <li class="d-inline ml-2"><a href="#" class="text-primary">回复(<span v-text="comment.replyCount">2</span>)</a></li>
+                                    <li class="d-inline ml-2">
+                                        <a :href="'#huifu-'+index" class="text-primary">回复(<span v-text="comment.replyCount">2</span>)</a>
+                                    </li>
                                 </ul>
                             </div>
                             <!-- 回复列表 -->
@@ -315,7 +331,13 @@
                                     <div class="mt-3">
                                         <span v-text="formDate(replyComment.createTime)">2020-2-22 20:20:20</span>
                                         <ul class="d-inline float-right">
-                                            <li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+                                            <li class="d-inline ml-2">
+                                                <a @click="like($event)" href="javascript:void(0)" class="text-primary"><b v-text="replyComment.likeStatus==1?'已赞':'赞'">赞</b>(<i v-text="replyComment.likeCount">1</i>)</a>
+                                                <!--entityId-->
+                                                <input type="hidden" :value="replyComment.id">
+                                                <!--entityType-->
+                                                <input type="hidden" value="2">
+                                            </li>
                                             <li class="d-inline ml-2">|</li>
                                             <li class="d-inline ml-2"><a :href="'#huifu-'+index+'-'+cindex"  data-toggle="collapse" class="text-primary">回复</a></li>
                                         </ul>
@@ -335,7 +357,7 @@
                                     </div>
                                 </li>
                                 <!-- 回复输入框 -->
-                                <li class="pb-3 pt-3">
+                                <li class="pb-3 pt-3" :id="'huifu-'+index">
                                     <form @submit.prevent="submitComment">
                                         <div>
                                             <input type="text" class="input-size" name="content" placeholder="回复你的观点"/>
@@ -407,7 +429,9 @@
         postUser:[],
         postDetail:{},
         pagination:{},
-        flag:''
+        loginStatus:false, //判断登录状态
+        entity:{entityType:'',entityId:''},
+        likeStatus: 0
     };
 
 
@@ -431,6 +455,7 @@
                     vue.postDetail = result.post;
                     vue.comments = vue.pagination.list;
                     vue.replyComments = vue.comments.replyComment;
+                    vue.likeStatus = result.likeStatus;
                 });
             },
             submitComment: function(event) {
@@ -443,14 +468,32 @@
                     // error callback
                 });
             },
+            like:function (e) {
+                var target = e.currentTarget;
+                var entityId = $(target.nextElementSibling).val();
+                var entityType = $(target.nextElementSibling.nextElementSibling).val();
+                vue.entity.entityId = entityId;
+                vue.entity.entityType = entityType;
+                var url = this.contextPath + "like";
+                axios.post(url,this.entity).then(function (response) {
+                    var result = response.data;
+                    if (result.code == 0) {
+                        $(target).children("i").text(result.data.likeCount);
+                        $(target).children("b").text(result.data.likeStatus==1?'已赞':'赞');
+                    } else {
+
+                    }
+                });
+            },
             getUser:function () {
                 var url = this.contextPath + this.getUserUri;
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     if (result.code == 0) {
                         vue.user = result.data;
+                        vue.loginStatus = true;
                     }else {
-                        vue.flag = result.flag;
+
                     }
                 });
             },
@@ -460,7 +503,7 @@
                     var result = response.data;
                     //如果注销成功 返回登录页面
                     if (result.code==0){
-                        location.href="http://localhost:8080/toolmantalk/loginPage";
+                        location.href=this.contextPath+"index";
                     }
                 });
             },

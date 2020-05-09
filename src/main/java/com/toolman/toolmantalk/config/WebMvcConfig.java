@@ -118,6 +118,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                         res.put("msg","您当前未登录,请重新登录!");
                         out = response.getWriter();
                         out.append(res.toString());
+                        response.sendRedirect("http://localhost:8080/toolmantalk/login");
                         return false;
                     }
                     catch (Exception e) {
@@ -131,7 +132,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                     if (claims == null){
                         try{
                             JSONObject res = new JSONObject();
-                            res.put("flag","false");
+                            res.put("flag",false);
                             res.put("msg","伪造token，请求无效!");
                             out = response.getWriter();
                             out.append(res.toString());

@@ -92,8 +92,10 @@ public class UserService {
 
     /*验证码校验*/
     public boolean checkCode(String phone, String verifyCode){
+        //判断redis中是否存在验证码
         boolean result = redisTemplate.opsForValue().getOperations().hasKey(verify_code+phone);
         if (result){
+            //判断输入的验证码和redis中的是否一致
             String code = redisTemplate.opsForValue().get(verify_code+phone);
             if (code.equals(verifyCode))
                 return true;
@@ -114,28 +116,28 @@ public class UserService {
             throw new IllegalArgumentException("参数不能为空!");
         }
         if (StringUtils.isBlank(user.getUsername())) {
-            map.put("message", "账号不能为空!");
+            map.put("usernameMsg", "账号不能为空!");
             return map;
         }
         if (StringUtils.isBlank(user.getPassword())) {
-            map.put("message", "密码不能为空!");
+            map.put("passwordMsg", "密码不能为空!");
             return map;
         }
         if (StringUtils.isBlank(user.getEmail())) {
-            map.put("message", "邮箱不能为空!");
+            map.put("emailMsg", "邮箱不能为空!");
             return map;
         }
 
         //验证账号
         User u = userMapper.selectByName(HtmlUtils.htmlEscape(user.getUsername()));
         if (u != null){
-            map.put("message", "该账号已存在!");
+            map.put("usernameMsg", "该账号已存在!");
             return map;
         }
 
         u = userMapper.selectByEmail(user.getEmail());
         if (u != null){
-            map.put("message", "该邮箱已被注册!");
+            map.put("emailMsg", "该邮箱已被注册!");
             return map;
         }
 

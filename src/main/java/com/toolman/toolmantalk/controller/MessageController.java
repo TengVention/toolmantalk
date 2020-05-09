@@ -2,7 +2,6 @@ package com.toolman.toolmantalk.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.Message;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.MessageService;
@@ -12,7 +11,6 @@ import com.toolman.toolmantalk.util.Result;
 import com.toolman.toolmantalk.util.SensitiveFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.HtmlUtils;
 
 import java.util.*;
@@ -144,22 +142,6 @@ public class MessageController {
         messageService.addMessage(message);
 
         return Result.success("私信已发送");
-    }
-
-
-
-    @ExcludeInterceptor
-    @RequestMapping(value="/messageList", method= RequestMethod.GET)
-    public ModelAndView letterList(){
-        ModelAndView mv = new ModelAndView("letter");
-        return mv;
-    }
-
-    @ExcludeInterceptor
-    @RequestMapping(value="/detail", method= RequestMethod.GET)
-    public ModelAndView letterDetail(){
-        ModelAndView mv = new ModelAndView("letter-detail");
-        return mv;
     }
 
 }

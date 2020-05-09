@@ -139,10 +139,10 @@ public class LoginController implements CommunityConstant {
     @ExcludeInterceptor
     @PostMapping("/sms/checkCode")
     public Object checkCode(@RequestParam String code,
-                            @RequestParam String phone){
-        boolean result = userService.checkCode(phone,code);
+                            @RequestBody User phone){
+        boolean result = userService.checkCode(phone.getPhone(),code);
         if (result){
-            User user = userService.findUserByPhone(phone);
+            User user = userService.findUserByPhone(phone.getPhone());
             if (user==null){
                 return Result.fail("该手机号未注册!");
             }
@@ -155,10 +155,30 @@ public class LoginController implements CommunityConstant {
         return Result.fail("验证码不正确!");
     }
 
+//    /*验证码激活*/
+//    @ExcludeInterceptor
+//    @PostMapping("/sms/checkCode")
+//    public Object checkCode(@RequestParam String code,
+//                            @RequestParam String phone){
+//        boolean result = userService.checkCode(phone,code);
+//        if (result){
+//            User user = userService.findUserByPhone(phone);
+//            if (user==null){
+//                return Result.fail("该手机号未注册!");
+//            }
+//            if (user.getStatus()==1){
+//                return Result.fail("该账号已激活，请勿重复激活!");
+//            }
+//            userService.updateUserStatus(user.getId(), 1);
+//            return Result.success("激活成功");
+//        }
+//        return Result.fail("验证码不正确!");
+//    }
+
 
     //前端页面跳转控制
     //注册页面
-    @GetMapping("/register")
+    @GetMapping("/registerPage")
     public ModelAndView register(){
         ModelAndView mv = new ModelAndView("register");
         return mv;

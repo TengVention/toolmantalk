@@ -1,0 +1,184 @@
+2020-05-07 12:00:27,494 INFO [restartedMain] c.t.t.ToolManTalkApplication [StartupInfoLogger.java:50] Starting ToolManTalkApplication on DESKTOP-H4V4GM7 with PID 6576 (C:\Users\cwteng\Desktop\toolmantalk\target\classes started by cwteng in C:\Users\cwteng\Desktop\toolmantalk)
+2020-05-07 12:00:27,525 INFO [restartedMain] c.t.t.ToolManTalkApplication [SpringApplication.java:675] No active profile set, falling back to default profiles: default
+2020-05-07 12:00:27,840 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:227] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-07 12:00:27,840 INFO [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [DeferredLog.java:227] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-07 12:00:30,490 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-07 12:00:30,513 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-05-07 12:00:30,654 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 45ms. Found 0 repository interfaces.
+2020-05-07 12:00:31,587 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$41ce53e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-07 12:00:33,288 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2020-05-07 12:00:33,365 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-07 12:00:33,393 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2020-05-07 12:00:33,394 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-07 12:00:33,585 INFO [restartedMain] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2020-05-07 12:00:33,585 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:296] Root WebApplicationContext: initialization completed in 5745 ms
+2020-05-07 12:00:36,228 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-07 12:00:36,442 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:61] Adding welcome page template: index
+2020-05-07 12:00:37,094 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2020-05-07 12:00:37,148 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2020-05-07 12:00:37,171 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:204] Tomcat started on port(s): 8080 (http) with context path '/toolmantalk'
+2020-05-07 12:00:37,174 INFO [restartedMain] c.t.t.ToolManTalkApplication [StartupInfoLogger.java:59] Started ToolManTalkApplication in 12.301 seconds (JVM running for 16.616)
+2020-05-07 12:03:31,230 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-07 12:03:31,230 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2020-05-07 12:03:31,243 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 12 ms
+2020-05-07 12:03:43,308 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 12:03:43],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 12:03:43,312 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 12:03:43],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 12:03:43,384 INFO [http-nio-8080-exec-10] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2020-05-07 12:03:43,743 INFO [http-nio-8080-exec-10] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2020-05-07 12:03:43,874 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 12:03:43],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 15:29:55,532 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:29:55],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 15:31:10,146 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:31:10],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 15:31:10,147 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:31:10],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 15:31:10,153 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:31:10],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 15:31:11,438 INFO [http-nio-8080-exec-9] i.l.c.EpollProvider [EpollProvider.java:68] Starting without optional epoll library
+2020-05-07 15:31:11,443 INFO [http-nio-8080-exec-9] i.l.c.KqueueProvider [KqueueProvider.java:70] Starting without optional kqueue library
+2020-05-07 15:31:12,071 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:31:12],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 15:31:12,078 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:31:12],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 15:34:02,407 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:02],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 15:34:08,053 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:08],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 15:34:08,055 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:08],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 15:34:08,064 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:08],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 15:34:08,512 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:08],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 15:34:08,521 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:08],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 15:34:23,555 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:23],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 15:34:23,598 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:23],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 15:34:23,601 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:23],访问了[com.toolman.toolmantalk.service.UserService.updateUserStatus].
+2020-05-07 15:34:38,401 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.login].
+2020-05-07 15:34:38,406 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 15:34:38,797 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.DiscussPostService.listDiscussPosts].
+2020-05-07 15:34:38,834 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoByName].
+2020-05-07 15:34:38,897 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:38,901 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:38,904 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:38,907 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:38,910 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:38,913 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:38,916 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:38],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoById].
+2020-05-07 15:34:40,327 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 15:34:40],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoByName].
+2020-05-07 17:02:23,373 INFO [http-nio-8080-exec-3] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:23],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:02:31,267 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:31],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 17:02:31,269 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:31],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 17:02:31,279 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:31],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 17:02:31,904 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:31],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 17:02:31,909 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:31],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 17:02:49,785 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:49],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 17:02:49,789 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:49],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 17:02:49,795 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:02:49],访问了[com.toolman.toolmantalk.service.UserService.updateUserStatus].
+2020-05-07 17:03:45,409 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:03:45],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:03:52,581 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:03:52],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 17:03:52,581 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:03:52],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 17:03:52,584 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:03:52],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 17:03:52,976 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:03:52],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 17:03:52,982 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:03:52],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 17:04:32,510 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:04:32],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 17:04:32,513 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:04:32],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 17:04:32,516 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:04:32],访问了[com.toolman.toolmantalk.service.UserService.updateUserStatus].
+2020-05-07 17:16:01,358 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:16:01],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:22:36,227 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[0:0:0:0:0:0:0:1],在[2020-05-07 17:22:36],访问了[com.toolman.toolmantalk.service.UserService.findUserInfoByName].
+2020-05-07 17:36:28,071 INFO [http-nio-8080-exec-6] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[0:0:0:0:0:0:0:1],在[2020-05-07 17:36:28],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:39:37,198 INFO [Thread-31] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-07 17:39:38,425 INFO [Thread-31] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2020-05-07 17:39:38,775 INFO [Thread-31] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2020-05-07 17:39:39,831 INFO [restartedMain] c.t.t.ToolManTalkApplication [StartupInfoLogger.java:50] Starting ToolManTalkApplication on DESKTOP-H4V4GM7 with PID 6576 (C:\Users\cwteng\Desktop\toolmantalk\target\classes started by cwteng in C:\Users\cwteng\Desktop\toolmantalk)
+2020-05-07 17:39:39,832 INFO [restartedMain] c.t.t.ToolManTalkApplication [SpringApplication.java:675] No active profile set, falling back to default profiles: default
+2020-05-07 17:39:40,338 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-07 17:39:40,338 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-05-07 17:39:40,353 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-05-07 17:39:40,469 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$41ce53e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-07 17:39:40,750 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2020-05-07 17:39:40,751 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-07 17:39:40,753 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2020-05-07 17:39:40,753 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-07 17:39:40,809 INFO [restartedMain] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2020-05-07 17:39:40,810 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:296] Root WebApplicationContext: initialization completed in 973 ms
+2020-05-07 17:39:41,215 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-07 17:39:41,314 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:61] Adding welcome page template: index
+2020-05-07 17:39:41,533 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2020-05-07 17:39:41,555 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2020-05-07 17:39:41,562 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:204] Tomcat started on port(s): 8080 (http) with context path '/toolmantalk'
+2020-05-07 17:39:41,563 INFO [restartedMain] c.t.t.ToolManTalkApplication [StartupInfoLogger.java:59] Started ToolManTalkApplication in 1.808 seconds (JVM running for 20361.006)
+2020-05-07 17:39:41,565 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:70] Condition evaluation unchanged
+2020-05-07 17:39:41,663 INFO [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-07 17:39:41,665 INFO [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2020-05-07 17:39:41,681 INFO [http-nio-8080-exec-7] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 16 ms
+2020-05-07 17:39:41,691 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:39:41],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:39:41,702 INFO [http-nio-8080-exec-7] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-2 - Starting...
+2020-05-07 17:39:41,715 INFO [http-nio-8080-exec-7] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-2 - Start completed.
+2020-05-07 17:42:49,951 INFO [http-nio-8080-exec-6] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:42:49],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:44:18,245 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:44:18],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:47:09,805 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:47:09],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:47:28,577 INFO [http-nio-8080-exec-6] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:47:28],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:50:18,966 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:50:18],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:50:29,313 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:50:29],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:52:02,555 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:52:02],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:55:42,484 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:55:42],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 17:55:42,486 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:55:42],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 17:55:42,491 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:55:42],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 17:55:43,071 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:55:43],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 17:55:43,076 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:55:43],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 17:57:12,177 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:57:12],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 17:57:43,626 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:57:43],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 17:57:43,628 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:57:43],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 17:57:43,635 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:57:43],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 17:57:44,258 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:57:44],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 17:57:44,263 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:57:44],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 17:58:25,235 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 17:58:25],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 17:59:55,034 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[0:0:0:0:0:0:0:1],在[2020-05-07 17:59:55],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:00:08,696 INFO [http-nio-8080-exec-6] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:00:08],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:00:08,699 INFO [http-nio-8080-exec-6] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:00:08],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 18:00:08,702 INFO [http-nio-8080-exec-6] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:00:08],访问了[com.toolman.toolmantalk.service.UserService.updateUserStatus].
+2020-05-07 18:11:34,356 INFO [Thread-39] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:208] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-07 18:11:35,485 INFO [Thread-39] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-2 - Shutdown initiated...
+2020-05-07 18:11:35,489 INFO [Thread-39] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-2 - Shutdown completed.
+2020-05-07 18:11:35,827 INFO [restartedMain] c.t.t.ToolManTalkApplication [StartupInfoLogger.java:50] Starting ToolManTalkApplication on DESKTOP-H4V4GM7 with PID 6576 (C:\Users\cwteng\Desktop\toolmantalk\target\classes started by cwteng in C:\Users\cwteng\Desktop\toolmantalk)
+2020-05-07 18:11:35,828 INFO [restartedMain] c.t.t.ToolManTalkApplication [SpringApplication.java:675] No active profile set, falling back to default profiles: default
+2020-05-07 18:11:36,108 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:244] Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-05-07 18:11:36,108 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:126] Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-05-07 18:11:36,124 INFO [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:182] Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2020-05-07 18:11:36,176 INFO [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [PostProcessorRegistrationDelegate.java:330] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$41ce53e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-05-07 18:11:36,302 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:90] Tomcat initialized with port(s): 8080 (http)
+2020-05-07 18:11:36,302 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2020-05-07 18:11:36,303 INFO [restartedMain] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2020-05-07 18:11:36,303 INFO [restartedMain] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/9.0.19]
+2020-05-07 18:11:36,464 INFO [restartedMain] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2020-05-07 18:11:36,465 INFO [restartedMain] o.s.w.c.ContextLoader [ServletWebServerApplicationContext.java:296] Root WebApplicationContext: initialization completed in 634 ms
+2020-05-07 18:11:36,770 INFO [restartedMain] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java:171] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-07 18:11:36,833 INFO [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping [WelcomePageHandlerMapping.java:61] Adding welcome page template: index
+2020-05-07 18:11:36,991 INFO [restartedMain] o.s.b.d.a.OptionalLiveReloadServer [OptionalLiveReloadServer.java:57] LiveReload server is running on port 35729
+2020-05-07 18:11:37,005 INFO [restartedMain] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2020-05-07 18:11:37,012 INFO [restartedMain] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:204] Tomcat started on port(s): 8080 (http) with context path '/toolmantalk'
+2020-05-07 18:11:37,013 INFO [restartedMain] c.t.t.ToolManTalkApplication [StartupInfoLogger.java:59] Started ToolManTalkApplication in 1.223 seconds (JVM running for 22276.455)
+2020-05-07 18:11:37,015 INFO [restartedMain] o.s.b.d.a.ConditionEvaluationDeltaLoggingListener [ConditionEvaluationDeltaLoggingListener.java:70] Condition evaluation unchanged
+2020-05-07 18:11:41,541 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-07 18:11:41,542 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:524] Initializing Servlet 'dispatcherServlet'
+2020-05-07 18:11:41,548 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:546] Completed initialization in 6 ms
+2020-05-07 18:12:21,365 INFO [http-nio-8080-exec-9] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:21],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 18:12:21,369 INFO [http-nio-8080-exec-9] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-3 - Starting...
+2020-05-07 18:12:21,382 INFO [http-nio-8080-exec-9] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-3 - Start completed.
+2020-05-07 18:12:29,686 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:29],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 18:12:29,690 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:29],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 18:12:29,697 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:29],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 18:12:30,259 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:30],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 18:12:30,263 INFO [http-nio-8080-exec-1] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:30],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 18:12:46,161 INFO [http-nio-8080-exec-3] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:46],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:12:46,164 INFO [http-nio-8080-exec-3] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:46],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 18:12:46,168 INFO [http-nio-8080-exec-3] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:12:46],访问了[com.toolman.toolmantalk.service.UserService.updateUserStatus].
+2020-05-07 18:15:06,360 INFO [http-nio-8080-exec-3] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:06],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 18:15:18,894 INFO [http-nio-8080-exec-2] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:18],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 18:15:18,895 INFO [http-nio-8080-exec-2] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:18],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 18:15:18,901 INFO [http-nio-8080-exec-2] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:18],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 18:15:19,425 INFO [http-nio-8080-exec-2] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:19],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 18:15:19,432 INFO [http-nio-8080-exec-2] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:19],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 18:15:38,022 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:15:38],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:16:38,650 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[0:0:0:0:0:0:0:1],在[2020-05-07 18:16:38],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:18:00,181 INFO [http-nio-8080-exec-8] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:00],访问了[com.toolman.toolmantalk.service.UserService.register].
+2020-05-07 18:18:17,366 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:17],访问了[com.toolman.toolmantalk.service.UserService.generateCode].
+2020-05-07 18:18:17,368 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:17],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 18:18:17,374 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:17],访问了[com.toolman.toolmantalk.service.UserService.sendVerifyCode].
+2020-05-07 18:18:17,827 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:17],访问了[com.toolman.toolmantalk.service.UserService.findUserByName].
+2020-05-07 18:18:17,833 INFO [http-nio-8080-exec-10] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:17],访问了[com.toolman.toolmantalk.service.UserService.updateUserPhone].
+2020-05-07 18:18:26,847 INFO [http-nio-8080-exec-5] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:26],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:18:42,242 INFO [http-nio-8080-exec-7] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:42],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:18:45,005 INFO [http-nio-8080-exec-4] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:45],访问了[com.toolman.toolmantalk.service.UserService.checkCode].
+2020-05-07 18:18:45,008 INFO [http-nio-8080-exec-4] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:45],访问了[com.toolman.toolmantalk.service.UserService.findUserByPhone].
+2020-05-07 18:18:45,012 INFO [http-nio-8080-exec-4] c.t.t.a.ServiceLogAspect [ServiceLogAspect.java:36] 用户[127.0.0.1],在[2020-05-07 18:18:45],访问了[com.toolman.toolmantalk.service.UserService.updateUserStatus].

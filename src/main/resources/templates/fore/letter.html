@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="/toolmantalk/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/toolmantalk/static/css/global.css">
 	<link rel="stylesheet" href="/toolmantalk/static/css/letter.css">
-	<title>牛客网-私信列表</title>
+	<title>ToolManTalk-私信列表</title>
 </head>
 <body>
 	<div id="app" class="nk-container">
@@ -19,26 +19,26 @@
 				<!-- 导航 -->
 				<nav class="navbar navbar-expand-lg navbar-dark">
 					<!-- logo -->
-					<a class="navbar-brand" href="#"></a>
+					<a class="navbar-brand" :href="contextPath+'index'"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<!-- 功能 -->
+					<!--功能-->
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link" href="#">首页</a>
+								<a class="nav-link" :href="contextPath+'index'">首页</a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link position-relative" href="#">消息<span class="badge badge-danger">12</span></a>
+							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
+								<a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
 							</li>
-							<li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link" href="#">注册</a>
+							<li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
+								<a class="nav-link" :href="contextPath+'register'">注册</a>
 							</li>
-							<li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link" href="#">登录</a>
+							<li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
+								<a class="nav-link" :href="contextPath+'login'">登录</a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical dropdown">
+							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
 								</a>
@@ -242,7 +242,7 @@
 			postUser:[],
 			postDetail:{},
 			pagination:{},
-			flag:'',
+			loginStatus:false,
 			result:{}
 		};
 
@@ -293,23 +293,24 @@
 					});
 				},
 				getUser:function () {
-					var url = this.contextPath + this.getUserUri;
+					var url = this.contextPath+"getUser";
 					axios.get(url).then(function (response) {
 						var result = response.data;
 						if (result.code == 0) {
 							vue.user = result.data;
+							vue.loginStatus = true;
 						}else {
-							vue.flag = result.flag;
+
 						}
 					});
 				},
 				logout:function () {
-					var url = this.contextPath + this.logoutUri;
+					var url = this.contextPath + "logout";
 					axios.get(url).then(function (response) {
 						var result = response.data;
 						//如果注销成功 返回登录页面
 						if (result.code==0){
-							location.href="http://localhost:8080/toolmantalk/loginPage";
+							location.href="http://localhost:8080/toolmantalk/index";
 						}
 					});
 				},
@@ -330,16 +331,6 @@
 				jumpByNumber: function(start){
 					if(start!=vue.pagination.pageNum)
 						vue.getMessage(start);
-				},
-				logout:function () {
-					var url = this.contextPath + "logout";
-					axios.get(url).then(function (response) {
-						var result = response.data;
-						//如果注销成功 返回登录页面
-						if (result.code==0){
-							location.href="http://localhost:8080/toolmantalk/loginPage";
-						}
-					});
 				},
 				formDate:function (value, formatString) {
 					if(null==value)

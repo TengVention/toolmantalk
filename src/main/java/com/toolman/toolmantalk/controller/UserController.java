@@ -1,5 +1,6 @@
 package com.toolman.toolmantalk.controller;
 
+import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.UserService;
 import com.toolman.toolmantalk.util.CommunityUtil;
@@ -86,6 +87,7 @@ public class UserController {
      * @param fileName
      * @param response
      */
+    @ExcludeInterceptor
     @GetMapping("/header/{fileName}")
     public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response){
         //服务器存放路径

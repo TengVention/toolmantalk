@@ -26,6 +26,26 @@ public class Comment {
 
     private List<Comment> replyComments;
 
+    private long likeCount;
+
+    private int likeStatus;
+
+    public long getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(long likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public int getLikeStatus() {
+        return likeStatus;
+    }
+
+    public void setLikeStatus(int likeStatus) {
+        this.likeStatus = likeStatus;
+    }
+
     public int getReplyCount() {
         return replyCount;
     }

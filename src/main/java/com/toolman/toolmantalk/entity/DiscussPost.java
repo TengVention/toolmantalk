@@ -11,8 +11,6 @@ public class DiscussPost {
     private int id;
     //用户id
     private int userId;
-
-    private User user;
     //标题
     private String title;
     //文本内容
@@ -27,6 +25,18 @@ public class DiscussPost {
     private int commentCount;
     //帖子分数
     private double score;
+
+    private User user;
+
+    private long likeCount;
+
+    public long getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(long likeCount) {
+        this.likeCount = likeCount;
+    }
 
     public int getId() {
         return id;

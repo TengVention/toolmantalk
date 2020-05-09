@@ -22,6 +22,33 @@ public class ForePageController {
         return mv;
     }
 
+    @ExcludeInterceptor
+    @GetMapping("/register")
+    public ModelAndView register() {
+        ModelAndView mv = new ModelAndView("fore/register");
+        return mv;
+    }
 
+    /*消息列表页面*/
+    @GetMapping("/letter/messageList")
+    public ModelAndView letterList(){
+        ModelAndView mv = new ModelAndView("fore/letter");
+        return mv;
+    }
+
+    /*消息详情页面*/
+    @GetMapping("/letter/detail")
+    public ModelAndView letterDetail(){
+        ModelAndView mv = new ModelAndView("fore/letter-detail");
+        return mv;
+    }
+
+    //    前端页面跳转
+    /*用户设置页面*/
+    @GetMapping("/userSetting")
+    public ModelAndView setting(){
+        ModelAndView mv = new ModelAndView("fore/setting");
+        return mv;
+    }
 
 }

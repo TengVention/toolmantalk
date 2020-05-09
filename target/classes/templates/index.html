@@ -8,6 +8,8 @@
 	<script src="/toolmantalk/static/js/moment.js" type="text/javascript"></script> <!-- vue.js 格式化日期用的 -->
 	<link rel="stylesheet" href="/toolmantalk/static/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/toolmantalk/static/css/global.css">
+	<script src="/toolmantalk/static/js/toastr.js"></script><!--toastr用于消息提示-->
+	<link rel="stylesheet" href="/toolmantalk/static/css/toastr.css">
 	<title>牛客网-首页</title>
 </head>
 <body>	
@@ -23,28 +25,28 @@
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<!-- 功能 -->
+					<!--功能-->
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link" href="#">首页</a>
+								<a class="nav-link" :href="contextPath+'index'">首页</a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link position-relative" href="#">消息<span class="badge badge-danger">12</span></a>
+							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
+								<a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
 							</li>
-							<li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link" href="#">注册</a>
+							<li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
+								<a class="nav-link" :href="contextPath+'register'">注册</a>
 							</li>
-							<li v-if="flag=='false'" class="nav-item ml-3 btn-group-vertical">
+							<li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
 								<a class="nav-link" :href="contextPath+'login'">登录</a>
 							</li>
-							<li v-if="flag!='false'" class="nav-item ml-3 btn-group-vertical dropdown">
+							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<a class="dropdown-item text-center" href="#">个人主页</a>
-									<a class="dropdown-item text-center" href="#">账号设置</a>
+									<a class="dropdown-item text-center" :href="contextPath+'userSetting'">账号设置</a>
 									<a class="dropdown-item text-center" @click="logout" href="#">退出登录</a>
 									<div class="dropdown-divider"></div>
 									<span class="dropdown-item text-center text-secondary" v-html="user.username">teng</span>
@@ -74,7 +76,7 @@
 							<a class="nav-link" href="#">最热</a>
 						</li>
 					</ul>
-					<button type="button" class="btn btn-primary btn-sm position-absolute rt-0" data-toggle="modal" data-target="#publishModal" v-if="flag!='false'">我要发布</button>
+					<button type="button" class="btn btn-primary btn-sm position-absolute rt-0" data-toggle="modal" data-target="#publishModal" v-if="loginStatus">我要发布</button>
 				</div>
 				<!-- 弹出框 -->
 				<div class="modal fade" id="publishModal" tabindex="-1" role="dialog" aria-labelledby="publishModalLabel" aria-hidden="true">
@@ -90,34 +92,34 @@
 								<form>
 									<div class="form-group">
 										<label for="recipient-name" class="col-form-label">标题：</label>
-										<input type="text" class="form-control" id="recipient-name">
+										<input @focus="clearError($event)" v-model="post.title" type="text" class="form-control" id="recipient-name">
 									</div>
 									<div class="form-group">
 										<label for="message-text" class="col-form-label">正文：</label>
-										<textarea class="form-control" id="message-text" rows="15"></textarea>
+										<textarea @focus="clearError($event)" v-model="post.content" class="form-control" id="message-text" rows="15"></textarea>
 									</div>
 								</form>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-								<button type="button" class="btn btn-primary" id="publishBtn">发布</button>
+								<button @click="addPost" type="button" class="btn btn-primary" id="publishBtn">发布</button>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- 提示框 -->
-				<div class="modal fade" id="hintModal" tabindex="-1" role="dialog" aria-labelledby="hintModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="hintModalLabel">提示</h5>
-							</div>
-							<div class="modal-body" id="hintBody">
-								发布完毕!
-							</div>
-						</div>
-					</div>
-				</div>
+<!--				<div class="modal fade" id="hintModal" tabindex="-1" role="dialog" aria-labelledby="hintModalLabel" aria-hidden="true">-->
+<!--					<div class="modal-dialog modal-lg" role="document">-->
+<!--						<div class="modal-content">-->
+<!--							<div class="modal-header">-->
+<!--								<h5 class="modal-title" id="hintModalLabel">提示</h5>-->
+<!--							</div>-->
+<!--							<div class="modal-body" id="hintBody">-->
+<!--								发布完毕!-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 				
 				<!-- 帖子列表 -->
 				<ul class="list-unstyled">
@@ -134,7 +136,7 @@
 							<div class="text-muted font-size-12">
 								<u class="mr-3" v-html="post.user.username" >寒江雪</u> 发布于 <b v-text="formDate(post.createTime)">2019-04-15 15:32:18</b>
 								<ul class="d-inline float-right">
-									<li class="d-inline ml-2">赞 11</li>
+									<li class="d-inline ml-2">赞 <i v-text="post.likeCount">11</i></li>
 									<li class="d-inline ml-2">|</li>
 									<li class="d-inline ml-2">回帖 <span v-text="post.commentCount" >7</span></li>
 								</ul>
@@ -152,7 +154,7 @@
 							<a class="page-link" @click="jump('pre')" href="#">上一页</a>
 						</li>
 						<li class="page-item" :class="{ disabled: pagination.pageNum==i}" v-for="i in pagination.navigatepageNums">
-							<a class="page-link" href="#" @click="jumpByNumber(i)">{{i}}</a>
+							<a class="page-link" href="#" @click="jumpByNumber(i)" v-text="i">1</a>
 						</li>
 						<li class="page-item" :class="{ disabled: !pagination.hasNextPage }">
 							<a class="page-link" @click="jump('next')" href="#">下一页</a>
@@ -228,6 +230,7 @@
 		</footer>
 	</div>
 
+	<script src="/toolmantalk/static/js/toastrOptions.js"></script>
 	<script type="text/javascript">
 		var data4Vue = {
 			contextPath:'http://localhost:8080/toolmantalk/',
@@ -235,7 +238,7 @@
 			post:{title:'',content:''},
 			pagination:{},
 			user:[],
-			flag:'',
+			loginStatus:false, //判断登录状态
 			show:false
 		};
 
@@ -256,15 +259,28 @@
 					});
 				},
 				addPost:function () {
+					if(0==this.post.title.length){
+						$("#recipient-name").addClass("is-invalid");
+						toastr.error("请输入帖子标题！");
+						return;
+					}
+					if(0==this.post.content.length){
+						$("#message-text").addClass("is-invalid");
+						toastr.error("请输入帖子内容！");
+						return;
+					}
 					var url = this.contextPath + "discuss/addPost";
 					axios.post(url,this.post).then(function (response) {
 						var result = response.data;
 						if (result.code == 0) {
-							$("#discussPost").hide();
-							window.location.reload();
+							toastr.info("帖子发布成功！","ToolManTalk");
+							setTimeout(function () {
+								toastr.clear();
+								window.location.reload();
+							},1500);
 						}
+
 					});
-					this.list(1);
 				},
 				getUser:function () {
 					var url = this.contextPath+"getUser";
@@ -272,8 +288,9 @@
 						var result = response.data;
 						if (result.code == 0) {
 							vue.user = result.data;
+							vue.loginStatus = true;
 						}else {
-							vue.flag = result.flag;
+
 						}
 					});
 				},
@@ -314,6 +331,9 @@
 						return "";
 					formatString = formatString || 'YYYY-MM-DD HH:mm:ss';
 					return moment(value).format(formatString);
+				},
+				clearError:function (e) {
+					$(e.currentTarget).removeClass("is-invalid");
 				}
 			}
 		});
