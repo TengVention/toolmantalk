@@ -40,14 +40,14 @@
                         </li>
                         <li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
+                                <img :src="loginUser.headerUrl" class="rounded-circle" style="width:30px;"/>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item text-center" href="#">个人主页</a>
-                                <a class="dropdown-item text-center" href="#">账号设置</a>
+                                <a class="dropdown-item text-center" :href="contextPath+'user/profile?userId='+loginUser.id">个人主页</a>
+                                <a class="dropdown-item text-center" :href="contextPath+'userSetting'">账号设置</a>
                                 <a class="dropdown-item text-center" @click="logout" href="#">退出登录</a>
                                 <div class="dropdown-divider"></div>
-                                <span class="dropdown-item text-center text-secondary" v-html="user.username">teng</span>
+                                <span class="dropdown-item text-center text-secondary" v-html="loginUser.username">teng</span>
                             </div>
                         </li>
                     </ul>
@@ -120,12 +120,12 @@
             <!-- 私信列表 -->
             <ul class="list-unstyled mt-4">
                 <li class="media pb-3 pt-3 mb-2" v-for="(letter,index) in letters">
-                    <a v-if="letter.fromUser.id != user.id" href="profile.html">
+                    <a v-if="letter.fromUser.id != loginUser.id" href="profile.html">
                         <img  :src="letter.fromUser.headerUrl" class="mr-4 rounded-circle user-header" alt="用户头像" >
                     </a>
-                    <div :style="letter.fromUser.id != user.id?'':'margin-left: 52%'" class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div :style="letter.fromUser.id != loginUser.id?'':'margin-left: 52%'" class="toast show d-lg-block" role="alert" aria-live="assertive" aria-atomic="true">
                         <div class="toast-header">
-                            <strong class="mr-auto" :class="letter.fromUser.id == user.id ? 'text-primary' : ''" v-html="letter.fromUser.username" >落基山脉下的闲人</strong>
+                            <strong class="mr-auto" :class="letter.fromUser.id == loginUser.id ? 'text-primary' : ''" v-html="letter.fromUser.username" >落基山脉下的闲人</strong>
                             <small v-text="formatDate(letter.createTime)">2019-04-25 15:49:32</small>
                             <button @click="deleteLetter" type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
                                 <span aria-hidden="true" >&times;</span>
@@ -135,7 +135,7 @@
                             君不见, 黄河之水天上来, 奔流到海不复回!
                         </div>
                     </div>
-                    <a v-if="letter.fromUser.id == user.id" href="profile.html" style="margin-left: 24px;">
+                    <a v-if="letter.fromUser.id == loginUser.id" href="profile.html" style="margin-left: 24px;">
                         <img  :src="letter.fromUser.headerUrl" class=" rounded-circle user-header" alt="用户头像" >
                     </a>
                 </li>
@@ -234,7 +234,7 @@
         contextPath:'http://localhost:8080/toolmantalk/',
         logoutUri:'logout',//注销
         getUserUri:'getUser',//获取登录user
-        user:[],
+        loginUser:[],
         targetUser:{},
         letters:[],
         postUser:[],
@@ -300,7 +300,7 @@
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     if (result.code == 0) {
-                        vue.user = result.data;
+                        vue.loginUser = result.data;
                         vue.loginStatus = true;
                     }else {
 

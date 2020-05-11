@@ -114,11 +114,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
                     try{
                         JSONObject res = new JSONObject();
-                        res.put("flag","false");
+                        res.put("code",4);
                         res.put("msg","您当前未登录,请重新登录!");
                         out = response.getWriter();
                         out.append(res.toString());
-                        response.sendRedirect("http://localhost:8080/toolmantalk/login");
+                        //如果是一些需要登录的页面请求，重定向到登录页面
+                        if ("GET".equals(request.getMethod())){
+                            response.sendRedirect("http://localhost:8080/toolmantalk/login");
+                            return false;
+                        }
                         return false;
                     }
                     catch (Exception e) {

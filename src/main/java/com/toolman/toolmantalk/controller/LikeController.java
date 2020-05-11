@@ -26,12 +26,14 @@ public class LikeController {
 
         String type = (String) likeMap.get("entityType");
         String id = (String) likeMap.get("entityId");
+        String userId = (String) likeMap.get("entityUserId");
         int entityType = Integer.parseInt(type);
         int entityId = Integer.parseInt(id);
+        int entityUserId = Integer.parseInt(userId);
         User user = hostHolder.getUser();
 
         //  点赞
-        likeService.like(user.getId(), entityType, entityId);
+        likeService.like(user.getId(), entityType, entityId, entityUserId);
         //  点赞数量
         long likeCount = likeService.findEntityLikeCount(entityType, entityId);
         //状态 1-已赞 0-未赞

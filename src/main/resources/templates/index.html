@@ -42,14 +42,14 @@
 							</li>
 							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
+									<img :src="loginUser.headerUrl" class="rounded-circle" style="width:30px;"/>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item text-center" href="#">个人主页</a>
+									<a class="dropdown-item text-center" :href="contextPath+'user/profile?userId='+loginUser.id">个人主页</a>
 									<a class="dropdown-item text-center" :href="contextPath+'userSetting'">账号设置</a>
 									<a class="dropdown-item text-center" @click="logout" href="#">退出登录</a>
 									<div class="dropdown-divider"></div>
-									<span class="dropdown-item text-center text-secondary" v-html="user.username">teng</span>
+									<span class="dropdown-item text-center text-secondary" v-html="loginUser.username">teng</span>
 								</div>
 							</li>
 						</ul>
@@ -124,7 +124,7 @@
 				<!-- 帖子列表 -->
 				<ul class="list-unstyled">
 					<li class="media pb-3 pt-3 mb-3 border-bottom" v-for="post in posts">
-						<a href="site/profile.html">
+						<a :href="contextPath+'user/profile?userId='+post.user.id">
 							<img :src="post.user.headerUrl" class="mr-4 rounded-circle" alt="用户头像" style="width:50px;height:50px;">
 						</a>
 						<div class="media-body">
@@ -237,7 +237,7 @@
 			posts: [],
 			post:{title:'',content:''},
 			pagination:{},
-			user:[],
+			loginUser:[],
 			loginStatus:false, //判断登录状态
 			show:false
 		};
@@ -287,7 +287,7 @@
 					axios.get(url).then(function (response) {
 						var result = response.data;
 						if (result.code == 0) {
-							vue.user = result.data;
+							vue.loginUser = result.data;
 							vue.loginStatus = true;
 						}else {
 

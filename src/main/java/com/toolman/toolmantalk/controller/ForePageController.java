@@ -29,6 +29,19 @@ public class ForePageController {
         return mv;
     }
 
+    /*页面跳转 部分*/
+    @GetMapping("/discuss/listPost")
+    public ModelAndView listPost(){
+        ModelAndView mv = new ModelAndView("fore/listPost");
+        return mv;
+    }
+
+    @GetMapping("/discuss/postDetail")
+    public ModelAndView postDetail(){
+        ModelAndView mv = new ModelAndView("fore/postDetail");
+        return mv;
+    }
+
     /*消息列表页面*/
     @GetMapping("/letter/messageList")
     public ModelAndView letterList(){
@@ -48,6 +61,26 @@ public class ForePageController {
     @GetMapping("/userSetting")
     public ModelAndView setting(){
         ModelAndView mv = new ModelAndView("fore/setting");
+        return mv;
+    }
+
+    /*用户个人页面*/
+    @ExcludeInterceptor
+    @GetMapping("/user/profile")
+    public ModelAndView profilePage(){
+        ModelAndView mv = new ModelAndView("fore/profile");
+        return mv;
+    }
+
+    @GetMapping("/user/followee")
+    public ModelAndView followeePage(){
+        ModelAndView mv = new ModelAndView("fore/followee");
+        return mv;
+    }
+
+    @GetMapping("/user/follower")
+    public ModelAndView followerPage(){
+        ModelAndView mv = new ModelAndView("fore/follower");
         return mv;
     }
 

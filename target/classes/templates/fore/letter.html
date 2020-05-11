@@ -40,14 +40,14 @@
 							</li>
 							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
+									<img :src="loginUser.headerUrl" class="rounded-circle" style="width:30px;"/>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item text-center" href="#">个人主页</a>
-									<a class="dropdown-item text-center" href="#">账号设置</a>
+									<a class="dropdown-item text-center" :href="contextPath+'user/profile?userId='+loginUser.id">个人主页</a>
+									<a class="dropdown-item text-center" :href="contextPath+'userSetting'">账号设置</a>
 									<a class="dropdown-item text-center" @click="logout" href="#">退出登录</a>
 									<div class="dropdown-divider"></div>
-									<span class="dropdown-item text-center text-secondary" v-html="user.username">teng</span>
+									<span class="dropdown-item text-center text-secondary" v-html="loginUser.username">teng</span>
 								</div>
 							</li>
 						</ul>
@@ -135,7 +135,7 @@
 								<span class="float-right text-muted font-size-12" v-text="formDate(conversation.createTime)">2020-01-06 21:39:14</span>
 							</h6>
 							<div>
-								<a :href="contextPath+'letter/detail?id='+conversation.conversationId"  ><span class="text-" :class="conversation.targetUser.id !=user.id?'text-primary':''" v-text="conversation.targetUser.id !=user.id?'我：': conversation.targetUser.username +'：'">我：</span><span v-html="conversation.content">在吗？</span></a>
+								<a :href="contextPath+'letter/detail?id='+conversation.conversationId"  ><span class="text-" :class="conversation.targetUser.id !=loginUser.id?'text-primary':''" v-text="conversation.targetUser.id !=loginUser.id?'我：': conversation.targetUser.username +'：'">我：</span><span v-html="conversation.content">在吗？</span></a>
 								<ul class="d-inline font-size-12 float-right">
 									<li class="d-inline ml-2"><a :href="contextPath+'letter/detail?id='+conversation.conversationId" class="text-primary">共<i v-text="conversation.letterCount">5</i>条会话</a></li>
 								</ul>
@@ -237,7 +237,7 @@
 			contextPath:'http://localhost:8080/toolmantalk/',
 			logoutUri:'logout',//注销
 			getUserUri:'getUser',//获取登录user
-			user:[],
+			loginUser:[],
 			conversations:[],
 			postUser:[],
 			postDetail:{},
@@ -297,7 +297,7 @@
 					axios.get(url).then(function (response) {
 						var result = response.data;
 						if (result.code == 0) {
-							vue.user = result.data;
+							vue.loginUser = result.data;
 							vue.loginStatus = true;
 						}else {
 

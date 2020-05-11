@@ -14,7 +14,6 @@ import com.toolman.toolmantalk.util.*;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -184,21 +183,5 @@ public class DiscussPostController implements CommunityConstant {
     }
 
 
-
-
-
-/*测试用可删除*/
-    /*页面跳转 部分*/
-    @RequestMapping(value="/listPost", method= RequestMethod.GET)
-    public ModelAndView listPost(){
-        ModelAndView mv = new ModelAndView("listPost");
-        return mv;
-    }
-
-    @RequestMapping(value="/postDetail", method= RequestMethod.GET)
-    public ModelAndView postDetail(){
-        ModelAndView mv = new ModelAndView("postDetail");
-        return mv;
-    }
 
 }

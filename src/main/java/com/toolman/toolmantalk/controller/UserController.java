@@ -2,10 +2,11 @@ package com.toolman.toolmantalk.controller;
 
 import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.User;
+import com.toolman.toolmantalk.service.FollowService;
+import com.toolman.toolmantalk.service.LikeService;
 import com.toolman.toolmantalk.service.UserService;
-import com.toolman.toolmantalk.util.CommunityUtil;
-import com.toolman.toolmantalk.util.HostHolder;
-import com.toolman.toolmantalk.util.Result;
+import com.toolman.toolmantalk.util.*;
+import io.jsonwebtoken.Claims;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,16 +16,18 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserController implements CommunityConstant {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -42,6 +45,12 @@ public class UserController {
 
     @Autowired
     private HostHolder hostHolder;
+    @Autowired
+    private LikeService likeService;
+    @Autowired
+    private JwtUtils jwtUtils;
+    @Autowired
+    private FollowService followService;
 
     /**
      * 更新头像
@@ -131,6 +140,50 @@ public class UserController {
         }
         return Result.fail(map);
     }
+
+    @ExcludeInterceptor
+    @GetMapping("/profile/{userId}")
+    public Object getProfilePage(@PathVariable("userId") int userId,
+                                 HttpServletRequest request) {
+        User user = userService.findUserInfoById(userId);
+        if (user == null) {
+            throw new RuntimeException("该用户不存在!");
+        }
+        //如果当前登录了
+        if (CookieUtil.getValue(request, "token")!=null){
+            String token = CookieUtil.getValue(request, "token");
+            Claims claims = jwtUtils.parseJwt(token);
+            if (claims == null){
+                return Result.fail("请求无效!");
+            }
+            String username = claims.getSubject();
+            User loginUser = userService.findUserInfoByName(username);
+            hostHolder.setUser(loginUser);
+        }
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("user",user);
+
+        //点赞数量
+        int likeCount = likeService.findUserLikeCount(userId);
+        map.put("likeCount",likeCount);
+
+        //关注数量
+        long followeeCount = followService.findFolloweeCount(userId, ENTITY_TYPE_USER);
+        map.put("followeeCount",followeeCount);
+        //粉丝数量
+        long followerCount = followService.findFollowerCount(ENTITY_TYPE_USER, userId);
+        map.put("followerCount",followerCount);
+        //是否已关注
+        boolean hasFollowed = false;
+        if (hostHolder.getUser() != null) {
+            hasFollowed = followService.hasFollowed(hostHolder.getUser().getId(), ENTITY_TYPE_USER, userId);
+        }
+        map.put("hasFollowed",hasFollowed);
+
+        return map;
+    }
+
 
 
 
