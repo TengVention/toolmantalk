@@ -6,6 +6,7 @@ import com.toolman.toolmantalk.dao.LoginTicketMapper;
 import com.toolman.toolmantalk.dao.UserMapper;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.util.AliyunSmsUtils;
+import com.toolman.toolmantalk.util.CommunityConstant;
 import com.toolman.toolmantalk.util.CommunityUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class UserService {
+public class UserService implements CommunityConstant {
 
     @Autowired
     private UserMapper userMapper;

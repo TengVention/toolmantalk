@@ -31,7 +31,7 @@
 								<a class="nav-link" :href="contextPath+'index'">首页</a>
 							</li>
 							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
+								<a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span v-if="allUnreadCount!=0" v-text="allUnreadCount" class="badge badge-danger">12</span></a>
 							</li>
 							<li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
 								<a class="nav-link" :href="contextPath+'register'">注册</a>
@@ -194,6 +194,7 @@
 				result: [],
 				errorMsg:{hasError:false},
 				loginUser:[],
+				allUnreadCount:0,
 				targetUser:{},
 				followerUsers:[],
 				page:{},//分页的一些参数
@@ -206,6 +207,7 @@
 				data: data4Vue,
 				mounted: function () {
 					this.getUser();
+					this.getAllUnreadCount();
 					this.getFollower(1);
 				},
 				methods: {
@@ -256,6 +258,16 @@
 								vue.loginStatus = true;
 							}else {
 
+							}
+						});
+					},
+					getAllUnreadCount:function () {
+						var url = this.contextPath+"getAllUnreadCount";
+						axios.get(url).then(function (response) {
+							var result = response.data;
+							console.log(result);
+							if (result.code == 0) {
+								vue.allUnreadCount = result.data.allUnreadCount;
 							}
 						});
 					},

@@ -20,7 +20,7 @@
             <!-- 导航 -->
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <!-- logo -->
-                <a class="navbar-brand" :href="contextPath+'index'"></a>
+                <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,7 +31,7 @@
                             <a class="nav-link" :href="contextPath+'index'">首页</a>
                         </li>
                         <li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
-                            <a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
+                            <a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span v-if="allUnreadCount!=0" v-text="allUnreadCount" class="badge badge-danger">12</span></a>
                         </li>
                         <li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
                             <a class="nav-link" :href="contextPath+'register'">注册</a>
@@ -41,14 +41,14 @@
                         </li>
                         <li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img :src="user.headerUrl" class="rounded-circle" style="width:30px;"/>
+                                <img :src="loginUser.headerUrl" class="rounded-circle" style="width:30px;"/>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item text-center" :href="contextPath+'userSetting'">个人主页</a>
-                                <a class="dropdown-item text-center" href="#">账号设置</a>
+                                <a class="dropdown-item text-center" :href="contextPath+'user/profile?userId='+loginUser.id">个人主页</a>
+                                <a class="dropdown-item text-center" :href="contextPath+'userSetting'">账号设置</a>
                                 <a class="dropdown-item text-center" @click="logout" href="#">退出登录</a>
                                 <div class="dropdown-divider"></div>
-                                <span class="dropdown-item text-center text-secondary" v-html="user.username">teng</span>
+                                <span class="dropdown-item text-center text-secondary" v-html="loginUser.username">teng</span>
                             </div>
                         </li>
                     </ul>
@@ -199,9 +199,10 @@
         getUserUri:'getUser',//获取登录user
         changePasswordUri:'user/changePassword',//修改密码
         uploadHeaderUri:'user/uploadHeader',//上传头像
-        user:[],
         password:{oldPassword:'',newPassword:'',repeatPassword:''},
         headerImage:'',
+        loginUser:[],
+        allUnreadCount:0,
         loginStatus:false,
     };
 
@@ -212,6 +213,7 @@
         data: data4Vue,
         mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
             this.getUser();
+            this.getAllUnreadCount();
         },
         methods: {
             updateHeader:function () {
@@ -289,10 +291,20 @@
                 axios.get(url).then(function (response) {
                     var result = response.data;
                     if (result.code == 0) {
-                        vue.user = result.data;
+                        vue.loginUser = result.data;
                         vue.loginStatus = true;
                     }else {
 
+                    }
+                });
+            },
+            getAllUnreadCount:function () {
+                var url = this.contextPath+"getAllUnreadCount";
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    console.log(result);
+                    if (result.code == 0) {
+                        vue.allUnreadCount = result.data.allUnreadCount;
                     }
                 });
             },

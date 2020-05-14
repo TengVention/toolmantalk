@@ -5,7 +5,9 @@ import com.github.pagehelper.PageInfo;
 import com.toolman.toolmantalk.annotation.ExcludeInterceptor;
 import com.toolman.toolmantalk.entity.Comment;
 import com.toolman.toolmantalk.entity.DiscussPost;
+import com.toolman.toolmantalk.entity.Event;
 import com.toolman.toolmantalk.entity.User;
+import com.toolman.toolmantalk.event.EventProducer;
 import com.toolman.toolmantalk.service.CommentService;
 import com.toolman.toolmantalk.service.DiscussPostService;
 import com.toolman.toolmantalk.service.LikeService;
@@ -37,6 +39,8 @@ public class DiscussPostController implements CommunityConstant {
     private LikeService likeService;
     @Autowired
     private JwtUtils jwtUtils;
+    @Autowired
+    private EventProducer eventProducer;
 
     /**
      * 帖子分页数据（用于首页显示）
@@ -78,6 +82,14 @@ public class DiscussPostController implements CommunityConstant {
         post.setUserId(user.getId());
         post.setCreateTime(new Date());
         discussPostService.addDiscussPost(post);
+
+        //触发发帖事件
+        Event event = new Event()
+                .setTopic(TOPIC_PUBLISH)
+                .setUserId(user.getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(post.getId());
+        eventProducer.fireEvent(event);
 
         //报错的情况，将统一来处理
         return Result.success("发布成功!");

@@ -20,6 +20,17 @@ public class Message {
     private User targetUser;
     private User fromUser;
 
+    /*用来放一些其他的数据*/
+    private Object data;
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
     public User getFromUser() {
         return fromUser;
     }

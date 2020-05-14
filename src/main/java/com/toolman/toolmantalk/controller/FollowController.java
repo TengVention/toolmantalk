@@ -1,7 +1,9 @@
 package com.toolman.toolmantalk.controller;
 
+import com.toolman.toolmantalk.entity.Event;
 import com.toolman.toolmantalk.entity.Page;
 import com.toolman.toolmantalk.entity.User;
+import com.toolman.toolmantalk.event.EventProducer;
 import com.toolman.toolmantalk.service.FollowService;
 import com.toolman.toolmantalk.service.UserService;
 import com.toolman.toolmantalk.util.CommunityConstant;
@@ -23,6 +25,8 @@ public class FollowController implements CommunityConstant {
     private HostHolder hostHolder;
     @Autowired
     private UserService userService;
+    @Autowired
+    private EventProducer eventProducer;
 
     @PostMapping("/follow")
     public Object follow(@RequestBody Map<String, Object> map ) {
@@ -31,6 +35,15 @@ public class FollowController implements CommunityConstant {
         User user = hostHolder.getUser();
 
         followService.follow(user.getId(), entityType, entityId);
+
+        //触发关注事件
+        Event event = new Event()
+                .setTopic(TOPIC_FOLLOW)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(entityType)
+                .setEntityId(entityId)
+                .setEntityUserId(entityId);//因为现在只能关注人所以就和entityId一样
+        eventProducer.fireEvent(event);
 
         return Result.success("已关注!");
     }

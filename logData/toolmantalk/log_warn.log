@@ -1,43 +1,345 @@
-2020-05-11 11:04:42,737 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/follower.html
-2020-05-11 11:04:57,074 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/followee
-2020-05-11 11:05:00,608 WARN [http-nio-8080-exec-10] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/followees
-2020-05-11 11:20:29,204 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 11:51:04,969 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/profile.html
-2020-05-11 11:53:45,561 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 11:54:03,643 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 12:38:31,595 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 12:55:24,067 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/followers/183
-2020-05-11 12:55:30,787 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/followers/183
-2020-05-11 12:55:55,511 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 13:01:00,789 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/css/global.css
-2020-05-11 13:01:00,793 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
-2020-05-11 13:01:00,799 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/profile.js
-2020-05-11 13:01:05,053 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
-2020-05-11 13:01:05,065 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/profile.js
-2020-05-11 13:03:53,837 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/follower.html
-2020-05-11 13:20:07,953 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 13:21:44,019 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 13:21:51,775 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/followee.html
-2020-05-11 13:23:02,369 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/follower.html
-2020-05-11 13:43:25,565 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/follower/214512352353
-2020-05-11 13:43:55,047 WARN [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "13254326456"]
-2020-05-11 13:45:59,455 WARN [http-nio-8080-exec-7] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [java.lang.RuntimeException: 该用户不存在]
-2020-05-11 13:47:15,634 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:47:36,468 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/follower/214512352353
-2020-05-11 13:47:57,159 WARN [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [java.lang.RuntimeException: 该用户不存在]
-2020-05-11 13:47:57,171 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:48:42,394 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:48:43,499 WARN [http-nio-8080-exec-4] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [java.lang.RuntimeException: 该用户不存在]
-2020-05-11 13:48:43,502 WARN [http-nio-8080-exec-9] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:48:45,022 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:48:45,887 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:48:47,096 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:48:58,051 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:49:06,248 WARN [http-nio-8080-exec-9] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [java.lang.RuntimeException: 该用户不存在]
-2020-05-11 13:49:06,256 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:49:46,820 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:49:47,335 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:49:47,800 WARN [http-nio-8080-exec-10] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [java.lang.RuntimeException: 该用户不存在]
-2020-05-11 13:49:47,802 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:49:48,151 WARN [http-nio-8080-exec-9] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
-2020-05-11 13:49:48,918 WARN [http-nio-8080-exec-7] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/error/404
+2020-05-12 10:24:49,859 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:24:51,012 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:24:52,116 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:24:53,420 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:24:54,827 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:24:56,535 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:24:58,742 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:25:00,750 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:25:02,658 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:25:04,870 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 10:25:06,776 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 11:23:33,836 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
+2020-05-12 11:25:11,016 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 11:25:12,321 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 11:25:13,726 WARN [restartedMain] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2020-05-12 12:04:09,067 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/css/letter.css
+2020-05-12 12:04:09,069 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/css/global.css
+2020-05-12 12:04:09,073 WARN [http-nio-8080-exec-4] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-12 12:04:12,780 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-12 12:13:44,460 WARN [http-nio-8080-exec-9] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/profile.html
+2020-05-12 12:13:50,783 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/profile.html
+2020-05-12 12:52:12,738 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/letter.html
+2020-05-12 12:53:05,791 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/letter/profile.html
+2020-05-12 12:54:33,923 WARN [http-nio-8080-exec-1] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/user/notice
+2020-05-12 14:01:51,755 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'eventConsumer': Unsatisfied dependency expressed through field 'messageService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.toolman.toolmantalk.service.MessageService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-05-12 14:11:48,702 WARN [http-nio-8080-exec-2] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java:419] Failure in @ExceptionHandler public void com.toolman.toolmantalk.controller.advice.ExceptionAdvice.handleException(java.lang.Exception,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:582)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:227)
+	at com.toolman.toolmantalk.controller.advice.ExceptionAdvice.handleException(ExceptionAdvice.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:408)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:140)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1298)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1110)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-12 14:11:48,750 WARN [http-nio-8080-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver [DefaultHandlerExceptionResolver.java:234] Failure while trying to resolve exception [org.springframework.http.converter.HttpMessageNotWritableException]
+java.lang.IllegalStateException: Cannot call sendError() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendError(ResponseFacade.java:472)
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.sendServerError(DefaultHandlerExceptionResolver.java:549)
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleHttpMessageNotWritable(DefaultHandlerExceptionResolver.java:439)
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.doResolveException(DefaultHandlerExceptionResolver.java:209)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:140)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1298)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1110)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-12 14:11:58,622 WARN [http-nio-8080-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver [ExceptionHandlerExceptionResolver.java:419] Failure in @ExceptionHandler public void com.toolman.toolmantalk.controller.advice.ExceptionAdvice.handleException(java.lang.Exception,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException
+java.lang.IllegalStateException: getOutputStream() has already been called for this response
+	at org.apache.catalina.connector.Response.getWriter(Response.java:582)
+	at org.apache.catalina.connector.ResponseFacade.getWriter(ResponseFacade.java:227)
+	at com.toolman.toolmantalk.controller.advice.ExceptionAdvice.handleException(ExceptionAdvice.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:408)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:140)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1298)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1110)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-12 14:11:58,624 WARN [http-nio-8080-exec-3] o.s.w.s.m.s.DefaultHandlerExceptionResolver [DefaultHandlerExceptionResolver.java:234] Failure while trying to resolve exception [org.springframework.http.converter.HttpMessageNotWritableException]
+java.lang.IllegalStateException: Cannot call sendError() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendError(ResponseFacade.java:472)
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.sendServerError(DefaultHandlerExceptionResolver.java:549)
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.handleHttpMessageNotWritable(DefaultHandlerExceptionResolver.java:439)
+	at org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver.doResolveException(DefaultHandlerExceptionResolver.java:209)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:140)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:79)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1298)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1110)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-05-12 15:19:06,445 WARN [http-nio-8080-exec-2] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/css/global.css
+2020-05-12 15:19:06,447 WARN [http-nio-8080-exec-6] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/letter.js
+2020-05-12 15:19:06,445 WARN [http-nio-8080-exec-5] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/css/letter.css
+2020-05-12 15:19:06,453 WARN [http-nio-8080-exec-3] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-12 15:19:06,553 WARN [http-nio-8080-exec-9] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/global.js
+2020-05-12 15:19:06,559 WARN [http-nio-8080-exec-8] o.s.w.s.PageNotFound [DispatcherServlet.java:1249] No mapping for GET /toolmantalk/js/letter.js
+2020-05-12 22:57:59,543 WARN [restartedMain] o.m.s.m.ClassPathMapperScanner [Logger.java:44] No MyBatis mapper was found in '[com.toolman.toolmantalk]' package. Please check your configuration.
+2020-05-12 22:58:00,885 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\cwteng\Desktop\toolmantalk\target\classes\mapper\comment-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\cwteng\Desktop\toolmantalk\target\classes\mapper\comment-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: Comment
+2020-05-12 22:58:09,419 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 11:49:45,594 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 12:02:40,273 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 12:13:16,786 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 12:43:16,344 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 13:08:42,169 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'searchController' method 
+public java.lang.Object com.toolman.toolmantalk.controller.SearchController.search(java.lang.String,int,int)
+to {GET /search}: There is already 'forePageController' bean method
+public org.springframework.web.servlet.ModelAndView com.toolman.toolmantalk.controller.ForePageController.searchPage() mapped.
+2020-05-13 13:09:06,664 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'searchController' method 
+public java.lang.Object com.toolman.toolmantalk.controller.SearchController.search(java.lang.String,int,int)
+to {GET /search}: There is already 'forePageController' bean method
+public org.springframework.web.servlet.ModelAndView com.toolman.toolmantalk.controller.ForePageController.searchPage() mapped.
+2020-05-13 13:17:18,570 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'searchController' method 
+public java.lang.Object com.toolman.toolmantalk.controller.SearchController.search(java.lang.String,int,int)
+to {GET /search}: There is already 'forePageController' bean method
+public org.springframework.web.servlet.ModelAndView com.toolman.toolmantalk.controller.ForePageController.searchPage() mapped.
+2020-05-13 14:10:50,255 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 14:32:55,351 WARN [main] o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [DuplicateJsonObjectContextCustomizerFactory.java:86] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/G:/springboot/apache-maven-3.6.1/repository/org/json/json/20170516/json-20170516.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-13 16:02:35,523 WARN [restartedMain] o.m.s.m.ClassPathMapperScanner [Logger.java:44] No MyBatis mapper was found in '[com.toolman.toolmantalk]' package. Please check your configuration.
+2020-05-13 16:02:36,043 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [C:\Users\cwteng\Desktop\toolmantalk\target\classes\mapper\comment-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\cwteng\Desktop\toolmantalk\target\classes\mapper\comment-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'Comment'.  Cause: java.lang.ClassNotFoundException: Cannot find class: Comment
+2020-05-13 18:39:25,110 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.toolman.toolmantalk.ToolManTalkApplication]; nested exception is java.io.FileNotFoundException: class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.class] cannot be opened because it does not exist
+2020-05-13 18:57:30,774 WARN [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'discussPostController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.toolman.toolmantalk.service.UserService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-05-13 19:08:06,626 WARN [restartedMain] o.a.c.c.C.[.[.[/toolmantalk] [DirectJDKLog.java:173] Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [A2F23E46F5B46D750AF7F92F7D179DD0]

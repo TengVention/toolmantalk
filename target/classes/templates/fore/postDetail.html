@@ -201,7 +201,7 @@
                                 <a class="nav-link" :href="contextPath+'index'">首页</a>
                             </li>
                             <li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
-                                <a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
+                                <a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span v-if="allUnreadCount!=0" v-text="allUnreadCount" class="badge badge-danger">12</span></a>
                             </li>
                             <li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
                                 <a class="nav-link" :href="contextPath+'register'">注册</a>
@@ -257,6 +257,8 @@
                             发布于 <b v-text="formDate(postDetail.createTime)">2020-2-20 20:20:20</b>
                             <ul class="d-inline float-right">
                                 <li class="d-inline ml-2">
+                                    <!--postId-->
+                                    <input type="hidden" :value="postDetail.id">
                                     <!--entityUserId-->
                                     <input type="hidden" :value="postDetail.userId">
                                     <a href="javascript:void(0)" @click="like($event)" class="text-primary">
@@ -268,7 +270,7 @@
                                     <input type="hidden" value="1">
                                 </li>
                                 <li class="d-inline ml-2">|</li>
-                                <li class="d-inline ml-2">
+                                <li v-if="loginStatus" class="d-inline ml-2">
                                     <a href="#replyform" class="text-primary">回帖 <span v-text="postDetail.commentCount">12</span></a>
                                 </li>
                             </ul>
@@ -285,7 +287,7 @@
                     <div class="col-8">
                         <h6><b class="square"></b> <i v-text="postDetail.commentCount">10</i>条回帖</h6>
                     </div>
-                    <div class="col-4 text-right">
+                    <div v-if="loginStatus" class="col-4 text-right">
                         <a href="#replyform" class="btn btn-primary btn-sm">&nbsp;&nbsp;回&nbsp;&nbsp;帖&nbsp;&nbsp;</a>
                     </div>
                 </div>
@@ -306,6 +308,8 @@
                                 <span>发布于 <b v-text="formDate(comment.createTime)">2020-2-21 20:20:20</b></span>
                                 <ul class="d-inline float-right">
                                     <li class="d-inline ml-2">
+                                        <!--postId-->
+                                        <input type="hidden" :value="postDetail.id">
                                         <!--entityUserId-->
                                         <input type="hidden" :value="comment.user.id">
                                         <a @click="like($event)" href="javascript:void(0)" class="text-primary"><b v-text="comment.likeStatus==1?'已赞':'赞'">赞</b>(<i v-text="comment.likeCount">1</i>)</a>
@@ -315,7 +319,7 @@
                                         <input type="hidden" value="2">
                                     </li>
                                     <li class="d-inline ml-2">|</li>
-                                    <li class="d-inline ml-2">
+                                    <li v-if="loginStatus" class="d-inline ml-2">
                                         <a :href="'#huifu-'+index" class="text-primary">回复(<span v-text="comment.replyCount">2</span>)</a>
                                     </li>
                                 </ul>
@@ -338,6 +342,8 @@
                                         <span v-text="formDate(replyComment.createTime)">2020-2-22 20:20:20</span>
                                         <ul class="d-inline float-right">
                                             <li class="d-inline ml-2">
+                                                <!--postId-->
+                                                <input type="hidden" :value="postDetail.id">
                                                 <!--entityUserId-->
                                                 <input type="hidden" :value="replyComment.user.id">
                                                 <a @click="like($event)" href="javascript:void(0)" class="text-primary"><b v-text="replyComment.likeStatus==1?'已赞':'赞'">赞</b>(<i v-text="replyComment.likeCount">1</i>)</a>
@@ -347,7 +353,7 @@
                                                 <input type="hidden" value="2">
                                             </li>
                                             <li class="d-inline ml-2">|</li>
-                                            <li class="d-inline ml-2"><a :href="'#huifu-'+index+'-'+cindex"  data-toggle="collapse" class="text-primary">回复</a></li>
+                                            <li v-if="loginStatus" class="d-inline ml-2"><a :href="'#huifu-'+index+'-'+cindex"  data-toggle="collapse" class="text-primary">回复</a></li>
                                         </ul>
                                         <div :id="'huifu-'+index+'-'+cindex" class="mt-4 collapse">
                                             <form @submit.prevent="submitComment">
@@ -365,7 +371,7 @@
                                     </div>
                                 </li>
                                 <!-- 回复输入框 -->
-                                <li class="pb-3 pt-3" :id="'huifu-'+index">
+                                <li v-if="loginStatus" class="pb-3 pt-3" :id="'huifu-'+index">
                                     <form @submit.prevent="submitComment">
                                         <div>
                                             <input type="text" class="input-size" name="content" placeholder="回复你的观点"/>
@@ -403,7 +409,7 @@
                 </nav>
             </div>
             <!-- 回帖输入 -->
-            <div class="container mt-3">
+            <div v-if="loginStatus" class="container mt-3">
                 <form class="replyform" @submit.prevent="submitComment" >
                     <p class="mt-3">
                         <a name="replyform"></a>
@@ -432,13 +438,14 @@
         logoutUri:'logout',//注销
         getUserUri:'getUser',//获取登录user
         loginUser:[],
+        allUnreadCount:0,
         comments:[],
         replyComments:[],
         postUser:[],
         postDetail:{},
         pagination:{},
         loginStatus:false, //判断登录状态
-        entity:{entityType:'',entityId:'',entityUserId:''},
+        entity:{entityType:'',entityId:'',entityUserId:'',postId:''},
         likeStatus: 0
     };
 
@@ -449,6 +456,7 @@
         data: data4Vue,
         mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
             this.getUser();
+            this.getAllUnreadCount();
             this.getPostDetail(1);
         },
         methods: {
@@ -481,10 +489,12 @@
                 var entityId = $(target.nextElementSibling).val();
                 var entityType = $(target.nextElementSibling.nextElementSibling).val();
                 var entityUserId =  $(target.previousElementSibling).val();
+                var postId = $(target.previousElementSibling.previousElementSibling).val();
                 console.log(entityUserId);
                 vue.entity.entityId = entityId;
                 vue.entity.entityType = entityType;
                 vue.entity.entityUserId = entityUserId;
+                vue.entity.postId = postId;
                 var url = this.contextPath + "like";
                 axios.post(url,this.entity).then(function (response) {
                     var result = response.data;
@@ -510,6 +520,16 @@
                         vue.loginStatus = true;
                     }else {
 
+                    }
+                });
+            },
+            getAllUnreadCount:function () {
+                var url = this.contextPath+"getAllUnreadCount";
+                axios.get(url).then(function (response) {
+                    var result = response.data;
+                    console.log(result);
+                    if (result.code == 0) {
+                        vue.allUnreadCount = result.data.allUnreadCount;
                     }
                 });
             },

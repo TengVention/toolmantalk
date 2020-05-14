@@ -84,4 +84,29 @@ public class ForePageController {
         return mv;
     }
 
+    @GetMapping("letter/notice")
+    public ModelAndView noticePage(){
+        ModelAndView mv = new ModelAndView("fore/notice");
+        return mv;
+    }
+
+    @GetMapping("letter/noticeDetail")
+    public ModelAndView noticeDetailPage(){
+        ModelAndView mv = new ModelAndView("fore/notice-detail");
+        return mv;
+    }
+
+    @GetMapping("/searchPage")
+    public ModelAndView searchPage(){
+        ModelAndView mv = new ModelAndView("fore/search");
+        return mv;
+    }
+
+    @ExcludeInterceptor
+    @GetMapping("/denied")
+    public ModelAndView getDeniedPage(){
+        ModelAndView mv = new ModelAndView("error/404");
+        return mv;
+    }
+
 }

@@ -1,11 +1,13 @@
 package com.toolman.toolmantalk.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.toolman.toolmantalk.entity.Message;
 import com.toolman.toolmantalk.entity.User;
 import com.toolman.toolmantalk.service.MessageService;
 import com.toolman.toolmantalk.service.UserService;
+import com.toolman.toolmantalk.util.CommunityConstant;
 import com.toolman.toolmantalk.util.HostHolder;
 import com.toolman.toolmantalk.util.Result;
 import com.toolman.toolmantalk.util.SensitiveFilter;
@@ -16,8 +18,7 @@ import org.springframework.web.util.HtmlUtils;
 import java.util.*;
 
 @RestController
-@RequestMapping("/letter")
-public class MessageController {
+public class MessageController implements CommunityConstant {
 
     @Autowired
     private MessageService messageService;
@@ -32,7 +33,7 @@ public class MessageController {
     private SensitiveFilter sensitiveFilter;
 
     //私信列表
-    @GetMapping("/list")
+    @GetMapping("/letter/list")
     public Object getLetterList(@RequestParam(value = "start", defaultValue = "1") int start,
                                 @RequestParam(value = "size", defaultValue = "7") int size) {
         User user = hostHolder.getUser();
@@ -52,16 +53,20 @@ public class MessageController {
             }
         }
         //查询未读消息总数量
+        //私信
         int letterUnreadCount = messageService.findLetterUnreadCount(user.getId(), null);
+        //通知
+        int noticeUnreadCount = messageService.findNoticeUnreadCount(user.getId(), null);
 
         //获取分页后的数据
         PageInfo<Message> page = new PageInfo<>(conversationList, 5);
         map.put("letterUnreadCount",letterUnreadCount);
+        map.put("noticeUnreadCount",noticeUnreadCount);
         map.put("page", page);
         return map;
     }
 
-    @GetMapping("/detail/{conversationId}")
+    @GetMapping("/letter/detail/{conversationId}")
     public Object getLetterDetail(@PathVariable("conversationId") String conversationId,
                                   @RequestParam(value = "start", defaultValue = "1") int start,
                                   @RequestParam(value = "size", defaultValue = "7") int size){
@@ -118,7 +123,7 @@ public class MessageController {
         return ids;
     }
 
-    @PostMapping("/send")
+    @PostMapping("/letter/send")
     public Object sendLetter(String toName, String content) {
         User targetUser = userService.findUserInfoByName(toName);
         if (targetUser == null){
@@ -142,6 +147,138 @@ public class MessageController {
         messageService.addMessage(message);
 
         return Result.success("私信已发送");
+    }
+
+    @GetMapping("/notice/list")
+    public Object getNoticeList() {
+        User user = hostHolder.getUser();
+
+        Map<String,Object> map = new HashMap<>();
+
+        //查询评论类的通知
+        Message message = messageService.findLatestNotice(user.getId(), TOPIC_COMMENT);
+        Map<String,Object> messageVo = new HashMap<>();
+        if (message != null){
+            messageVo.put("message",message);
+
+            String content = HtmlUtils.htmlUnescape(message.getContent());
+            Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
+
+            messageVo.put("user",userService.findUserInfoById((Integer) data.get("userId")));
+            messageVo.put("entityType",data.get("entityType"));
+            messageVo.put("entityId",data.get("entityId"));
+            messageVo.put("postId",data.get("postId"));
+
+            int count = messageService.findNoticeCount(user.getId(), TOPIC_COMMENT);
+            messageVo.put("count",count);
+
+            int unread = messageService.findNoticeUnreadCount(user.getId(), TOPIC_COMMENT);
+            messageVo.put("unread",unread);
+        }
+        map.put("commentNotice", messageVo);
+
+        //查询点赞类的通知
+        message = messageService.findLatestNotice(user.getId(), TOPIC_LIKE);
+        messageVo = new HashMap<>();
+        if (message != null){
+            messageVo.put("message",message);
+
+            String content = HtmlUtils.htmlUnescape(message.getContent());
+            Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
+
+            messageVo.put("user",userService.findUserInfoById((Integer) data.get("userId")));
+            messageVo.put("entityType",data.get("entityType"));
+            messageVo.put("entityId",data.get("entityId"));
+            messageVo.put("postId",data.get("postId"));
+
+            int count = messageService.findNoticeCount(user.getId(), TOPIC_LIKE);
+            messageVo.put("count",count);
+
+            int unread = messageService.findNoticeUnreadCount(user.getId(), TOPIC_LIKE);
+            messageVo.put("unread",unread);
+        }
+        map.put("likeNotice", messageVo);
+
+        //查询关注类的通知
+        message = messageService.findLatestNotice(user.getId(), TOPIC_FOLLOW);
+        messageVo = new HashMap<>();
+        if (message != null){
+            messageVo.put("message",message);
+
+            String content = HtmlUtils.htmlUnescape(message.getContent());
+            Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
+
+            messageVo.put("user",userService.findUserInfoById((Integer) data.get("userId")));
+            messageVo.put("entityType",data.get("entityType"));
+            messageVo.put("entityId",data.get("entityId"));
+
+            int count = messageService.findNoticeCount(user.getId(), TOPIC_FOLLOW);
+            messageVo.put("count",count);
+
+            int unread = messageService.findNoticeUnreadCount(user.getId(), TOPIC_FOLLOW);
+            messageVo.put("unread",unread);
+        }
+        map.put("followNotice", messageVo);
+
+        //查询未读消息数量
+        //私信
+        int letterUnreadCount = messageService.findLetterUnreadCount(user.getId(), null);
+        map.put("letterUnreadCount",letterUnreadCount);
+
+        //通知
+        int noticeUnreadCount = messageService.findNoticeUnreadCount(user.getId(), null);
+        map.put("noticeUnreadCount",noticeUnreadCount);
+
+        return map;
+    }
+
+    @GetMapping("/notice/detail/{topic}")
+    public Object getNoticeDetail(@PathVariable("topic") String topic,
+                                  @RequestParam(value = "start", defaultValue = "1") int start,
+                                  @RequestParam(value = "size", defaultValue = "7") int size) {
+
+        User user = hostHolder.getUser();
+        PageHelper.startPage(start, size);
+        List<Message> noticeList = messageService.findNotices(user.getId(), topic);
+        if (noticeList != null) {
+            for (Message notice : noticeList) {
+                Map<String, Object> map = new HashMap<>();
+                //内容
+                String content = HtmlUtils.htmlUnescape(notice.getContent());
+                Map<String, Object> data = JSONObject.parseObject(content, HashMap.class);
+                map.put("user",userService.findUserInfoById((Integer) data.get("userId")));
+                map.put("entityType", data.get("entityType"));
+                map.put("entityId", data.get("entityId"));
+                map.put("postId", data.get("postId"));
+                //通知的作者
+                map.put("fromUser",userService.findUserInfoById(notice.getFromId()));
+                notice.setData(map);
+            }
+        }
+        PageInfo<Message> page = new PageInfo<>(noticeList,5);
+
+        //设置为已读
+        List<Integer> ids = getLetterIds(noticeList);
+        if (!ids.isEmpty()) {
+            messageService.readMessage(ids);
+        }
+        Map<String, Object> detail = new HashMap<>();
+        detail.put("topic",topic);
+        detail.put("page",page);
+        return detail;
+    }
+
+    @GetMapping("/getAllUnreadCount")
+    public Object getAllUnreadCount(){
+        User user = hostHolder.getUser();
+        if (user != null) {
+            int letterUnreadCount = messageService.findLetterUnreadCount(user.getId(), null);
+            int noticeUnreadCount = messageService.findNoticeUnreadCount(user.getId(), null);
+            Map<String, Object> data = new HashMap<>();
+            data.put("allUnreadCount",letterUnreadCount+noticeUnreadCount);
+            return Result.success(data);
+        }
+        return Result.fail("当前未登录");
     }
 
 }

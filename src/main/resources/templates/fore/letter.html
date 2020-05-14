@@ -30,7 +30,7 @@
 								<a class="nav-link" :href="contextPath+'index'">首页</a>
 							</li>
 							<li v-if="loginStatus" class="nav-item ml-3 btn-group-vertical">
-								<a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span class="badge badge-danger">12</span></a>
+								<a class="nav-link position-relative" :href="contextPath+'letter/messageList'">消息<span v-if="allUnreadCount!=0" v-text="allUnreadCount" class="badge badge-danger">12</span></a>
 							</li>
 							<li v-if="!loginStatus" class="nav-item ml-3 btn-group-vertical">
 								<a class="nav-link" :href="contextPath+'register'">注册</a>
@@ -68,12 +68,14 @@
 					<!-- 选项 -->
 					<ul class="nav nav-tabs mb-3">
 						<li class="nav-item">
-							<a class="nav-link position-relative active" href="#">
+							<a class="nav-link position-relative active" :href="contextPath+'letter/messageList'">
 								朋友私信<span class="badge badge-danger" v-if="result.letterUnreadCount!=0" v-text="result.letterUnreadCount">10</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link position-relative" href="notice.html">系统通知<span class="badge badge-danger">27</span></a>
+							<a class="nav-link position-relative" :href="contextPath+'letter/notice'">
+								系统通知<span v-if="result.noticeUnreadCount!=0" v-text="result.noticeUnreadCount" class="badge badge-danger">27</span>
+							</a>
 						</li>
 					</ul>
 					<button type="button" class="btn btn-primary btn-sm position-absolute rt-0" data-toggle="modal" data-target="#sendModal">发私信</button>
@@ -126,7 +128,7 @@
 				<ul class="list-unstyled">
 					<li class="media pb-3 pt-3 mb-3 border-bottom position-relative" v-for="conversation in conversations">
 						<span class="badge badge-danger" v-if="conversation.unreadCount!=0" v-text="conversation.unreadCount">5</span>
-						<a href="profile.html">
+						<a :href="contextPath+'user/profile?userId='+conversation.targetUser.id">
 							<img :src="conversation.targetUser.headerUrl" class="mr-4 rounded-circle user-header" alt="用户头像" >
 						</a>
 						<div class="media-body">
@@ -135,7 +137,7 @@
 								<span class="float-right text-muted font-size-12" v-text="formDate(conversation.createTime)">2020-01-06 21:39:14</span>
 							</h6>
 							<div>
-								<a :href="contextPath+'letter/detail?id='+conversation.conversationId"  ><span class="text-" :class="conversation.targetUser.id !=loginUser.id?'text-primary':''" v-text="conversation.targetUser.id !=loginUser.id?'我：': conversation.targetUser.username +'：'">我：</span><span v-html="conversation.content">在吗？</span></a>
+								<a :href="contextPath+'letter/detail?id='+conversation.conversationId"  ><span v-html="conversation.content">在吗？</span></a>
 								<ul class="d-inline font-size-12 float-right">
 									<li class="d-inline ml-2"><a :href="contextPath+'letter/detail?id='+conversation.conversationId" class="text-primary">共<i v-text="conversation.letterCount">5</i>条会话</a></li>
 								</ul>
@@ -238,6 +240,7 @@
 			logoutUri:'logout',//注销
 			getUserUri:'getUser',//获取登录user
 			loginUser:[],
+			allUnreadCount:0,
 			conversations:[],
 			postUser:[],
 			postDetail:{},
@@ -253,6 +256,7 @@
 			data: data4Vue,
 			mounted:function(){ //mount this.list();ed　表示这个 Vue 对象加载成功了
 				this.getUser();
+				this.getAllUnreadCount();
 				this.getMessage(1);
 			},
 			methods: {
@@ -301,6 +305,16 @@
 							vue.loginStatus = true;
 						}else {
 
+						}
+					});
+				},
+				getAllUnreadCount:function () {
+					var url = this.contextPath+"getAllUnreadCount";
+					axios.get(url).then(function (response) {
+						var result = response.data;
+						console.log(result);
+						if (result.code == 0) {
+							vue.allUnreadCount = result.data.allUnreadCount;
 						}
 					});
 				},
